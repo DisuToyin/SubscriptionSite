@@ -84,7 +84,12 @@ export const Signin = () => {
 
             <p class="text-center mt-[5%] font-normal">
               Don't have an account ?{" "}
-              <a class="text-[#E9724C] font-semibold">Sign up</a>{" "}
+              <a
+                href="https://www.carrilagency.com/"
+                class="text-[#E9724C] font-semibold"
+              >
+                Sign up
+              </a>{" "}
             </p>
           </form>
         </div>
