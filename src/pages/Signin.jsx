@@ -9,14 +9,14 @@ import L from "../assets/L-carril.svg";
 export const Signin = () => {
   return (
     <div className="flex">
-      <div className="w-1/2  bg-[#1A243F] h-[screen]">
-        <div class="mt-[25%] max-w[560px] ml-[auto] mr-[auto]">
-          <div className="flex ">
+      <div className="w-1/2  bg-[#1A243F] h-[200vh]">
+        <div class="mt-[35%]  max-w[560px] ml-[auto] mr-[auto]">
+          <div className="flex items-end justify-center">
             <img alt="c" src={C} />
             <img alt="c" src={A} />
             <img alt="c" src={R1} />
           </div>
-          <div className="flex">
+          <div className="flex items-end justify-center mr-[100px]">
             <img alt="c" src={R1} />
             <img alt="c" src={I} />
             <img alt="c" src={L} />
@@ -40,7 +40,7 @@ export const Signin = () => {
               <input
                 type="email"
                 id="email"
-                class="focus:outline-0 rounded-none  border-solid border-[1px] text-gray-900 text-sm rounded-lg focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+                class="focus:outline-0 rounded-none  border-solid border-[1px] text-gray-900 text-sm focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
                 placeholder="Enter your work email"
                 required=""
               />
@@ -55,7 +55,7 @@ export const Signin = () => {
               <input
                 type="password"
                 id="password"
-                class="focus:outline-0 rounded-none  border-solid border-[1px] text-gray-900 text-sm rounded-lg focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                class="focus:outline-0 rounded-none  border-solid border-[1px] text-gray-900 text-sm  focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 required=""
                 placeholder="Enter your password"
               />
