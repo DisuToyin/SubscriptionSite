@@ -16,7 +16,7 @@ export const Signin = () => {
             <img alt="c" src={A} />
             <img alt="c" src={R1} />
           </div>
-          <div className="flex items-end justify-center mr-[100px]">
+          <div className="flex items-end mt-[60px] justify-center mr-[100px]">
             <img alt="c" src={R1} />
             <img alt="c" src={I} />
             <img alt="c" src={L} />
