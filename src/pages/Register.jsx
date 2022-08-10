@@ -3,9 +3,9 @@ import { Navbar } from "../components/Navbar";
 
 export const Register = () => {
   return (
-    <div>
+    <div class="bg-[#E5E5E5]">
       <Navbar />
-      <div class="bg-[#E5E5E5] h-[200vh]">
+      <div class=" h-[200vh]">
         <div class="shadow-md w-[688px] h-[711px] mr-[auto] ml-[auto] p-[24px] bg-white">
           <div class="mt-[0]">
             <form>
