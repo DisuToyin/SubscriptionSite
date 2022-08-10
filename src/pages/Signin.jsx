@@ -1,31 +1,15 @@
 import React from "react";
-import C from "../assets/C-carril.svg";
-import A from "../assets/A-carril.svg";
-import R1 from "../assets/R1-carril.svg";
-import dot from "../assets/dot-carril.svg";
-import I from "../assets/I-carril.svg";
-import L from "../assets/L-carril.svg";
+import C from "../assets/Frame 87.svg";
 
 export const Signin = () => {
   return (
     <div className="flex">
-      <div className="w-1/2  bg-[#1A243F] h-[200vh]">
-        <div class="mt-[35%]  max-w[560px] ml-[auto] mr-[auto]">
-          <div className="flex items-end justify-center">
-            <img alt="c" src={C} />
-            <img alt="c" src={A} />
-            <img alt="c" src={R1} />
-          </div>
-          <div className="flex items-end mt-[60px] justify-center mr-[100px]">
-            <img alt="c" src={R1} />
-            <img alt="c" src={I} />
-            <img alt="c" src={L} />
-            <img alt="c" src={dot} />
-          </div>
-        </div>
+      <div className="w-1/2 fixed  bg-[#1A243F] h-[100vh]">
+        {/* <div class="mt-[35%]  max-w[560px] ml-[auto] mr-[auto]"></div> */}
+        <img alt="" className="  w-[100%]  " src={C} />
       </div>
-      <main class="w-1/2">
-        <div class="shadow-md max-w-[560px] pl-[3rem] pr-[3rem] pt-[3rem] pb-[3rem] mt-[25%]  ml-[auto] mr-[auto] mb-[10rem]">
+      <main class="w-1/2 fixed right-0 h-[100vh]">
+        <div class="shadow-md max-w-[560px] pl-[3rem] pr-[3rem] pt-[3rem] pb-[3rem] ml-[auto] mt-[auto] mr-[auto] ">
           <form>
             <h2 class="text-xl mb-10 font-semibold">
               Sign in to your workspace
