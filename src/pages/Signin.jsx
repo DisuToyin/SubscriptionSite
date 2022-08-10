@@ -6,10 +6,10 @@ export const Signin = () => {
     <div className="flex">
       <div className="w-1/2 fixed md:hidden bg-[#1A243F] h-[100vh]">
         {/* <div class="mt-[35%]  max-w[560px] ml-[auto] mr-[auto]"></div> */}
-        <img alt="" className="  w-[auto]  " src={C} />
+        <img alt="" className="object-scale-down" src={C} />
       </div>
-      <main class="w-1/2 md:w-[100%]  fixed right-0 h-[100vh]">
-        <div class="shadow-md max-w-[560px] pl-[3rem] pr-[3rem] pt-[1rem] pb-[1rem] ml-[auto] mt-[5%] mr-[auto] ">
+      <div class="w-1/2 md:w-[100%]  fixed right-0 h-[100vh]">
+        <div class="shadow-md max-w-[560px] pl-[3rem] pr-[3rem] pt-[1rem] pb-[1rem] ml-[auto] mt-[15%] mr-[auto] ">
           <form>
             <h2 class="text-xl mb-6 font-semibold">
               Sign in to your workspace
@@ -54,12 +54,10 @@ export const Signin = () => {
             >
               Sign in
             </button>
-            <div>
-              <hr />
-              <p class="mb-[3%] text-[#ABABAB] font-bold text-center mt-[5%]">
-                OR
-              </p>
-              <hr />
+            <div className="grid grid-cols-3 mb-[3%] align-center mt-[5%]">
+              <span className="border-b-[1px] border-[#E5E5E5]" />
+              <p class=" text-[#ABABAB] font-bold text-center ">OR</p>
+              <span className="border-b-[1px] border-[#E5E5E5]" />
             </div>
             <button
               type=""
@@ -76,7 +74,7 @@ export const Signin = () => {
             </p>
           </form>
         </div>
-      </main>
+      </div>
     </div>
   );
   //   https://snazzy-cannoli-c82985.netlify.app/
