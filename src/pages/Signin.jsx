@@ -9,8 +9,8 @@ export const Signin = () => {
         {/* <div class="mt-[35%]  max-w[560px] ml-[auto] mr-[auto]"></div> */}
         <img alt="" className="object-scale-down" src={C} />
       </div>
-      <div class="w-1/2 md:w-[100%]  fixed right-0 h-[100vh]">
-        <div class="shadow-md max-w-[560px] pl-[3rem] pr-[3rem] pt-[1rem] pb-[1rem] ml-[auto] mt-[15%] mr-[auto] ">
+      <div class="w-1/2 md:w-[100%] md:relative fixed right-0 h-[100vh]">
+        <div class="shadow-md max-w-[560px] pl-[3rem] pr-[3rem] md:pl-[1.5rem] md:pr-[1.5rem] pt-[1rem] pb-[1rem] ml-[auto] mt-[15%] mr-[auto] ">
           <form>
             <h2 class="text-xl mb-6 font-semibold">
               Sign in to your workspace
@@ -65,7 +65,7 @@ export const Signin = () => {
             </div>
             <button
               type=""
-              class=" flex items-center gap-[1rem] content-center pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-solid border-[1px] font-bold text-[#222F51] hover:bg-[#222F51] hover:text-[white] border-[#222F51] mt-[3%] w-[100%] bg-[white] focus:ring-4 focus:outline-none focus:ring-blue-300  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[4px] "
+              class=" flex items-center gap-[1rem] justify-center pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-solid border-[1px] font-bold text-[#222F51] hover:bg-[#222F51] hover:text-[white] border-[#222F51] mt-[3%] w-[100%] bg-[white] focus:ring-4 focus:outline-none focus:ring-blue-300  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[4px] "
             >
               <img src={google} alt="google" />{" "}
               <span>Continue with Google</span>
