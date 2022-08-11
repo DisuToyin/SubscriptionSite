@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../components/Navbar";
+import google from "../assets/google.svg";
 
 export const Register = () => {
   return (
@@ -21,7 +22,7 @@ export const Register = () => {
                   <input
                     type="text"
                     id="first_name"
-                    class=" border pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-gray-300 text-gray-900 focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white rounded-none"
+                    class=" border pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-gray-300 text-gray-900 focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white rounded-[2px]"
                     placeholder="Enter your first name"
                     required
                   />
@@ -36,7 +37,7 @@ export const Register = () => {
                   <input
                     type="text"
                     id="last_name"
-                    class="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border border-gray-300 text-gray-900 rounded-none focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
+                    class="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border border-gray-300 text-gray-900 rounded-[2px] focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
                     placeholder="Enter your last name"
                     required
                   />
@@ -53,7 +54,7 @@ export const Register = () => {
                 <input
                   type="email"
                   id="email"
-                  class="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-none  border-solid border-[1px] text-gray-900  focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+                  class="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-[2px]  border-solid border-[1px] text-gray-900  focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
                   placeholder="Enter your work email"
                   required=""
                 />
@@ -68,7 +69,7 @@ export const Register = () => {
                 <input
                   type="password"
                   id="password"
-                  class=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-none  border-solid border-[1px] text-gray-900   focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                  class=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-[2px]  border-solid border-[1px] text-gray-900   focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                   required=""
                   placeholder="Enter your password"
                 />
@@ -81,15 +82,21 @@ export const Register = () => {
                 Next
               </button>
 
-              <p class="mb-[1.5%] text-[#ABABAB] font-bold text-center mt-[3%]">
-                OR
-              </p>
+              <div
+                style={{ display: "grid", gridTemplateColumns: "2fr .5fr 2fr" }}
+                className=" mb-[5%] items-center mt-[5%]"
+              >
+                <span className=" border-b-[1px] border-[#E5E5E5]" />
+                <p class="  text-[#ABABAB] font-bold text-center ">OR</p>
+                <span className=" border-b-[1px] border-[#E5E5E5]" />
+              </div>
 
               <button
                 type=""
-                class=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-solid border-[1px] font-bold text-[#222F51] hover:bg-[#222F51] hover:text-[white] border-[#222F51] mt-[3%] w-[100%] bg-[white] focus:ring-4 focus:outline-none focus:ring-blue-300  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[4px] "
+                class="flex items-center gap-[1rem] justify-center  pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-solid border-[1px] font-bold text-[#222F51] hover:bg-[#222F51] hover:text-[white] border-[#222F51] mt-[3%] w-[100%] bg-[white] focus:ring-4 focus:outline-none focus:ring-blue-300  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[4px] "
               >
-                Register with Google
+                <img src={google} alt="google" />{" "}
+                <span>Register with Google</span>
               </button>
             </form>
           </div>
