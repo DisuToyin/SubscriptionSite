@@ -1,5 +1,6 @@
 import React from "react";
 import C from "../assets/Frame 87.svg";
+import google from "../assets/google.svg";
 
 export const Signin = () => {
   return (
@@ -54,16 +55,20 @@ export const Signin = () => {
             >
               Sign in
             </button>
-            <div className="grid grid-cols-3 mb-[3%] align-center mt-[5%]">
-              <span className="border-b-[1px] border-[#E5E5E5]" />
-              <p class=" text-[#ABABAB] font-bold text-center ">OR</p>
-              <span className="border-b-[1px] border-[#E5E5E5]" />
+            <div
+              style={{ display: "grid", gridTemplateColumns: "2fr .5fr 2fr" }}
+              className=" mb-[3%] items-center mt-[5%]"
+            >
+              <span className=" border-b-[1px] border-[#E5E5E5]" />
+              <p class="  text-[#ABABAB] font-bold text-center ">OR</p>
+              <span className=" border-b-[1px] border-[#E5E5E5]" />
             </div>
             <button
               type=""
-              class="  pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-solid border-[1px] font-bold text-[#222F51] hover:bg-[#222F51] hover:text-[white] border-[#222F51] mt-[3%] w-[100%] bg-[white] focus:ring-4 focus:outline-none focus:ring-blue-300  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[4px] "
+              class=" flex items-center gap-[1rem] content-center pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-solid border-[1px] font-bold text-[#222F51] hover:bg-[#222F51] hover:text-[white] border-[#222F51] mt-[3%] w-[100%] bg-[white] focus:ring-4 focus:outline-none focus:ring-blue-300  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[4px] "
             >
-              Continue with Google
+              <img src={google} alt="google" />{" "}
+              <span>Continue with Google</span>
             </button>
 
             <p class="text-center mt-[5%] font-normal">

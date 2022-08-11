@@ -6,7 +6,7 @@ export const Register = () => {
     <div class="bg-[#E5E5E5]">
       <Navbar />
       <div class=" h-[200vh]">
-        <div class="shadow-md w-[688px] h-[711px] mr-[auto] ml-[auto] p-[24px] bg-white">
+        <div class="shadow-md sm:w-fit w-[688px] h-[711px] mr-[auto] ml-[auto] p-[24px] bg-white">
           <div class="mt-[0]">
             <form>
               <h3 class="font-bold text-[24px] mb-10">Join Carril</h3>
