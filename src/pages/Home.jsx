@@ -12,7 +12,10 @@ export default function Home() {
         Register page
       </a>{" "}
       <br />
-      <a className="mb-[10%]" href="/password-reset">
+      <a className="mb-[10%]" href="/recover-password">
+        Password recovery
+      </a>
+      <a className="mb-[10%]" href="/reset-password">
         Password reset
       </a>
     </div>
