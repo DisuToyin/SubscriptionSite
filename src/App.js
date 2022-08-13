@@ -4,6 +4,7 @@ import { Signin } from "./pages/Signin";
 import Home from "./pages/Home";
 import { ResetPassword } from "./pages/ResetPassword";
 import { RecoverPassword } from "./pages/RecoverPassword";
+import Project from "./pages/Project";
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/recover-password" element={<RecoverPassword />} />
+          <Route path="/project" element={<Project />} />
         </Routes>
       </BrowserRouter>
     </div>

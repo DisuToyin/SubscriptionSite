@@ -18,7 +18,11 @@ export default function Home() {
       <br />
       <a className="mb-[10%]" href="/reset-password">
         Password reset
-      </a>
+      </a>{" "}
+      <br />
+      <a className="mb-[10%]" href="/reset-password">
+        Project
+      </a>{" "}
     </div>
   );
 }
