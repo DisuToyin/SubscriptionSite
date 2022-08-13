@@ -7,6 +7,8 @@ import bellNoti from "../assets/Button.svg";
 // import addIcon from "../assets/addIcon.svg";
 import arrowdown from "../assets/arrowdown.svg";
 import "./styles.css";
+import listIcon from "../assets/listicon.svg";
+import boardview from "../assets/boardview.svg";
 
 export default function Project() {
   //   const [showModal, setShowModal] = useState(false);
@@ -77,13 +79,30 @@ export default function Project() {
             Queued
           </p>
         </div>
-        <div className="border-[1px] mt-[.9rem] border-[#E5E5E5] border-b-[#E5E5E5]"></div>
+        <div className="border-[.5px] mt-[.9rem] border-[#E5E5E5] border-b-[#E5E5E5]"></div>
         <div className="grid grid-cols-2 mt-[16px]">
-          <div className="flex gap-4">
+          <div className="flex gap-2">
             <SelectComp defaultOption={"Any status"} options={[]} />
             <SelectComp defaultOption={"Any category"} options={[]} />
           </div>
-          <div className="flex"></div>
+          <div className="flex gap-2 text-[12px] font-medium justify-end">
+            <div className="grid grid-cols-4 gap-[0] border-[1px] h-[42px] hover:bg-[#E9EBED] self-end items-center  p-[8px] cursor-pointer border-[#E5E5E5]">
+              <img
+                className="h-[16px] col-span-1  w-16px"
+                src={listIcon}
+                alt="list"
+              />
+              <p className="col-span-3 text-[#222F51]">List View</p>
+            </div>
+            <div className="grid grid-cols-4 gap-[0] border-[1px] h-[42px] hover:bg-[#E9EBED] self-end items-center  p-[8px] cursor-pointer border-[#E5E5E5]">
+              <img
+                className="h-[16px] col-span-1  w-16px"
+                src={boardview}
+                alt="list"
+              />
+              <p className="col-span-3 text-[#222F51]">Board View</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
