@@ -1,5 +1,6 @@
 import React from "react";
 import NavbarComp from "../components/NavbarComp";
+import SelectComp from "../components/Select";
 import carrilwhitelogo from "../assets/Carril button.svg";
 import calendlyIcon from "../assets/Icons.svg";
 import bellNoti from "../assets/Button.svg";
@@ -78,7 +79,10 @@ export default function Project() {
         </div>
         <div className="border-[1px] mt-[.9rem] border-[#E5E5E5] border-b-[#E5E5E5]"></div>
         <div className="grid grid-cols-2 mt-[16px]">
-          <div className="flex"></div>
+          <div className="flex gap-4">
+            <SelectComp defaultOption={"Any status"} options={[]} />
+            <SelectComp defaultOption={"Any category"} options={[]} />
+          </div>
           <div className="flex"></div>
         </div>
       </div>
