@@ -20,7 +20,7 @@ export default function Home() {
         Password reset
       </a>{" "}
       <br />
-      <a className="mb-[10%]" href="/reset-password">
+      <a className="mb-[10%]" href="/project">
         Project
       </a>{" "}
     </div>
