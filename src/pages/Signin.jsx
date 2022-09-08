@@ -1,7 +1,6 @@
 import React from "react";
 import C from "../assets/Frame 87.svg";
 
-
 export const Signin = () => {
   return (
     <div className="grid grid-cols-2 [h-100vh] fixed">
@@ -54,8 +53,6 @@ export const Signin = () => {
             >
               Sign in
             </button>
-        
-           
 
             <p class="text-center mt-[5%] font-normal">
               Don't have an account ?{" "}

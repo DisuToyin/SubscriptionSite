@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar } from "../components/Navbar";
-import google from "../assets/google.svg";
+
 import { useDispatch } from "react-redux";
 import { register } from "../slices/authslice";
 import { useNavigate } from "react-router-dom";
