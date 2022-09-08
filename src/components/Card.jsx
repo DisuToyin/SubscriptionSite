@@ -1,7 +1,7 @@
 import React from "react";
 import Toggle from "../components/Toggle";
 import Button from "../components/Button";
-export default function Card() {
+export default function Card({ card_type, target_audience }) {
   return (
     <div className="bg-white hover:bg-red rounded-[4rem]">
       <div className="flex flex-col p-6 mx-auto max-w-lg text-left text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
@@ -36,11 +36,11 @@ export default function Card() {
             />
           </svg>
           <h3 className="mb-4 text-[#2F3941] text-[32px] font-semibold">
-            Starter
+            {card_type}
           </h3>
         </div>
         <p className="font-light text-[14px] text-gray-500 sm:text-lg dark:text-gray-400">
-          For start-ups
+          {target_audience}
         </p>
         <div className="flex justify-left items-baseline mt-12 mb-2">
           <span className="mr-2 text-5xl text-[64px] text-[#87929D]  font-normal">
