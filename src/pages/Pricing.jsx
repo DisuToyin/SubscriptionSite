@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button";
 import { Navbar } from "../components/Navbar";
 import Toggle from "../components/Toggle";
 
@@ -9,7 +10,7 @@ export const Pricing = () => {
       <Navbar pageName="pricing" />
       <div className=" h-[200vh]">
         <div className="grid grid-cols-3 md:grid-cols-1 gap-8  pl-[48px] pr-[48px] max-width-[688px]">
-          <div className="bg-white  hover:bg-red">
+          <div className="bg-white hover:bg-red rounded-[4rem]">
             <div className="flex flex-col p-6 mx-auto max-w-lg text-left text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
               <div className="flex items-baseline gap-2">
                 <svg
@@ -62,7 +63,15 @@ export const Pricing = () => {
                 <span>Billed monthly</span>
               </div>
 
+              <Button
+                other_styles="bg-[#222F51] text-white mb-10"
+                button_text={"Select Plan"}
+              />
+
               <ul className="mb-8 space-y-4 text-left">
+                <li className="flex items-center space-x-3">
+                  <span className="font-semibold">Starter includes</span>
+                </li>
                 <li className="flex items-center space-x-3">
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
