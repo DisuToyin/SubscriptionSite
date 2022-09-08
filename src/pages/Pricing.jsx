@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar } from "../components/Navbar";
 import Toggle from "../components/Toggle";
 
 export const Pricing = () => {
-  const [plan, setPlan] = useState("monthly");
+  // const [plan, setPlan] = useState("monthly");
   return (
     <div className="bg-[#E5E5E5]">
       <Navbar pageName="pricing" />
@@ -49,20 +49,20 @@ export const Pricing = () => {
                 For start-ups
               </p>
               <div className="flex justify-left items-baseline mt-12 mb-2">
-                <span className="mr-2 text-5xl text-[64px] text-[#87929D]  font-medium">
+                <span className="mr-2 text-5xl text-[64px] text-[#87929D]  font-normal">
                   $
                 </span>
-                <span className="mr-2 text-5xl  text-[64px] text-[#2F3941] font-medium">
+                <span className="mr-2 text-5xl  text-[64px] text-[#2F3941] font-normal">
                   2900
                 </span>
                 <span className="text-[#87929D]">per month</span>
               </div>
-              <div className="mb-4 bg-[#E6EAFF] w-fit pl-2 pr-2 flex gap-2 text-[#222F51]">
+              <div className="mb-10 rounded-sm bg-[#E6EAFF] w-fit pl-2 pr-2 flex gap-2 text-[#222F51]">
                 <Toggle />
                 <span>Billed monthly</span>
               </div>
 
-              <ul role="list" className="mb-8 space-y-4 text-left">
+              <ul className="mb-8 space-y-4 text-left">
                 <li className="flex items-center space-x-3">
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
@@ -149,7 +149,7 @@ export const Pricing = () => {
                 </li>
               </ul>
               <a
-                href="#"
+                href="www.youtube.com"
                 className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900"
               >
                 Get started
