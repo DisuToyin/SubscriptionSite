@@ -37,7 +37,7 @@ export const Register = () => {
 
   return (
     <div className="bg-[#E5E5E5]">
-      <Navbar pageName="register" />
+      <Navbar pageName="register" margin_btm={"mb-[10%]"} />
       <div className=" h-[200vh]">
         <div className="shadow-md sm:w-fit w-[688px] h-[550px] mr-[auto] ml-[auto] p-[24px] bg-white">
           <div className="mt-[0]">

@@ -6,6 +6,7 @@ import { ResetPassword } from "./pages/ResetPassword";
 import { RecoverPassword } from "./pages/RecoverPassword";
 import Project from "./pages/Project";
 import { Pricing } from "./pages/Pricing";
+import Onboarding from "./pages/Onboarding";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/recover-password" element={<RecoverPassword />} />
           <Route path="/project" element={<Project />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/onboard" element={<Onboarding />} />
         </Routes>
       </BrowserRouter>
     </div>

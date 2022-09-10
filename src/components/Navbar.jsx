@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "../assets/navbar logo.svg";
 import { useNavigate } from "react-router-dom";
-export const Navbar = ({ pageName }) => {
+export const Navbar = ({ pageName, margin_btm = 0 }) => {
   const navigate = useNavigate();
   return (
     <div
       style={{ gridTemplateColumns: "1fr 3fr 1fr" }}
-      className="h-[89px] grid gap-4 pl-[48px] pr-[48px] sm:grid sm:grid-cols-2 content-center md:pl-[15px] md:pr-[15px] border-[#E2E2E2] border-b-[2px] mb-[10%] bg-white"
+      className={`h-[89px] grid gap-4 pl-[48px] pr-[48px] sm:grid sm:grid-cols-2 content-center md:pl-[15px] md:pr-[15px] border-[#E2E2E2] border-b-[2px]  bg-white ${margin_btm} `}
     >
       <img className="self-center" src={logo} alt="logo" />
       {pageName === "register" ? (
