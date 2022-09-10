@@ -20,8 +20,8 @@ export default function Home() {
         Password reset
       </a>{" "}
       <br />
-      <a className="mb-[10%]" href="/project">
-        Project
+      <a className="mb-[10%]" href="/onboard">
+        Onboard
       </a>{" "}
     </div>
   );
