@@ -26,6 +26,9 @@ export default function Onboarding() {
     setFormStep((curr) => curr + 1);
     console.log("here");
   };
+
+  const handleOnboarding = (e) => {};
+
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1.3fr 2.7fr " }}>
       <div className="h-[100vh] bg-[#161E33]">
@@ -185,7 +188,7 @@ export default function Onboarding() {
             <img src={book} alt="booka call" />
             <Button
               button_type="button"
-              handleClick={handleClick}
+              handleClick={handleOnboarding}
               other_styles={`bg-[#E9724C] text-white mb-10`}
               button_text={"Book A Call"}
             />

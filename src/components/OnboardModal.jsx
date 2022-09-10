@@ -7,7 +7,7 @@ export default function OnboardModal({
   title_styles = "",
 }) {
   return (
-    <div className="bg-white mr-[auto] w-[70%]  ml-[auto] p-[24px]">
+    <div className="bg-white mr-[auto] w-[690px]   ml-[auto] p-[24px]">
       <h3 className={`font-bold text-[24px] ${title_styles} `}>{title}</h3>
       <span className="text-[#5E5E5E] text-[14px]">{sub_title}</span>
       <div className="mt-[24px]">{children}</div>
