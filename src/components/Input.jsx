@@ -5,6 +5,9 @@ export default function Input({
   inputType,
   placeHolder,
   extraStyles,
+  value,
+  handleInputChange,
+  name,
   isRequired = false,
 }) {
   return (
@@ -13,6 +16,9 @@ export default function Input({
         {label}
       </label>
       <input
+        onChange={handleInputChange}
+        name={name}
+        value={value}
         type={inputType}
         className={`rounded-[2px] pl-[20px] pr-[20px] pt-[16px] mb-[2rem] pb-[16px] text-base focus:outline-0   border-solid border-[1px] text-gray-900  focus:ring-[#E9724C] focus:border-[#E9724C] block w-full  p-2.5 ${extraStyles}`}
         placeholder={placeHolder}
