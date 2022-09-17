@@ -23,6 +23,10 @@ export default function Home() {
       <a className="mb-[10%]" href="/onboard">
         Onboard
       </a>{" "}
+      <br />
+      <a className="mb-[10%]" href="/task">
+        Task
+      </a>{" "}
     </div>
   );
 }
