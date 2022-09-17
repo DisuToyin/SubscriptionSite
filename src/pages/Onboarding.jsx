@@ -48,6 +48,7 @@ export default function Onboarding() {
               }
               isRequired={true}
               inputType={"text"}
+              extraStyles={"mb-[2rem]"}
             />
             <Input
               label={"What industry does your company operate in?"}
@@ -58,6 +59,7 @@ export default function Onboarding() {
               }
               isRequired={true}
               inputType={"text"}
+              extraStyles={"mb-[2rem]"}
             />
             {formData.businessName === "" || formData.industry === "" ? (
               <Button
@@ -88,6 +90,7 @@ export default function Onboarding() {
                 setFormData({ ...formData, telephone: e.target.value })
               }
               inputType={"number"}
+              extraStyles={"mb-[2rem]"}
             />
             <Input
               label={"How did you hear about us?"}
@@ -98,6 +101,7 @@ export default function Onboarding() {
               }
               isRequired={true}
               inputType={"text"}
+              extraStyles={"mb-[2rem]"}
             />
             {formData.telephone === "" || formData.aboutUs === "" ? (
               <Button
@@ -161,6 +165,7 @@ export default function Onboarding() {
               }
               isRequired={true}
               inputType={"text"}
+              extraStyles={"mb-[2rem]"}
             />
             {formData.taskName === "" ? (
               <Button
