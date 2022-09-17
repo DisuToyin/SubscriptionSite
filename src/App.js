@@ -4,9 +4,11 @@ import { Signin } from "./pages/Signin";
 import Home from "./pages/Home";
 import { ResetPassword } from "./pages/ResetPassword";
 import { RecoverPassword } from "./pages/RecoverPassword";
-import Project from "./pages/Project";
+
 import { Pricing } from "./pages/Pricing";
 import Onboarding from "./pages/Onboarding";
+import Task from "./pages/Task";
+import Project from "./pages/Project";
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/recover-password" element={<RecoverPassword />} />
-          <Route path="/project" element={<Project />} />
+          <Route path="/task" element={<Task />} />
+          <Route path="/p" element={<Project />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/onboard" element={<Onboarding />} />
         </Routes>
