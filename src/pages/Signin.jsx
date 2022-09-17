@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import C from "../assets/Frame 87.svg";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import OnboardModal from "../components/OnboardModal";
+// import OnboardModal from "../components/OnboardModal";
 
 export const Signin = () => {
   const [formData, setFormData] = useState({
