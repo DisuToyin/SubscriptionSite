@@ -4,6 +4,7 @@ import chatIcon from "../assets/chatBox.svg";
 import ecllipse from "../assets/Ellipse 100.svg";
 import Badge from "./Badge";
 import { FiMoreHorizontal } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function Table({
   tableColumns = [
@@ -53,13 +54,16 @@ export default function Table({
                 scope="row"
                 className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                Astral Projections
+                <Link to="/task/1">Astral Projections</Link>
               </th>
               <td className="py-4 px-6">Sliver</td>
               <td className="py-4 px-6">
                 <Badge badgeText={"Completed"} />
               </td>
-              <td className="py-4 px-6">$2999</td>
+              <td className="py-4 px-6">
+                {" "}
+                <Link to="/task/1">$2999 </Link>
+              </td>
               <td></td>
               <td className="py-4 px-6">
                 <FiMoreHorizontal
@@ -69,6 +73,7 @@ export default function Table({
                 />
               </td>
             </tr>
+
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               <td className="py-4 px-6">
                 <img src={ecllipse} alt="ellipse" />

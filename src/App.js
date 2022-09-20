@@ -9,6 +9,7 @@ import { Pricing } from "./pages/Pricing";
 import Onboarding from "./pages/Onboarding";
 import Task from "./pages/Task";
 import Project from "./pages/Project";
+import SingleTask from "./pages/SingleTask";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/recover-password" element={<RecoverPassword />} />
           <Route path="/task" element={<Task />} />
+          <Route path="/task/:taskId" element={<SingleTask />} />
           <Route path="/p" element={<Project />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/onboard" element={<Onboarding />} />

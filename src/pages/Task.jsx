@@ -60,7 +60,7 @@ export default function Task() {
           </div>
         </div>
         <Tab />
-        <hr className="mt-[1rem]"></hr>
+        {/* <hr className="mt-[1rem]"></hr> */}
         <Table actionsColumn={true} />
       </div>
     </div>

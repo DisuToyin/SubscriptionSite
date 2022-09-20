@@ -1,5 +1,12 @@
 import React from "react";
+import Sidebar from "../components/Sidebar";
 
 export default function SingleTask() {
-  return <div>SingleTask</div>;
+  console.log("task detail");
+  return (
+    <div>
+      <Sidebar />
+      <div></div>
+    </div>
+  );
 }
