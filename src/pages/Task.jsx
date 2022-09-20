@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import listIcon from "../assets/list.svg";
 import boardview from "../assets/board.svg";
 import Table from "../components/Table";
+import "./styles.css";
 
 export default function Task() {
   return (
@@ -15,7 +16,7 @@ export default function Task() {
       <Sidebar />
       <div className="w-[100%] ">
         <div
-          className="grid my-3  mx-7"
+          className="grid my-3  mx-8"
           style={{ gridTemplateColumns: "2fr 3fr" }}
         >
           <h1 className="text-[28px] font-bold">Tasks</h1>
@@ -59,8 +60,8 @@ export default function Task() {
             />
           </div>
         </div>
-        <Tab />
-        {/* <hr className="mt-[1rem]"></hr> */}
+        <Tab borderRightStyles=" border-b border-gray-200" defaultTab={"All"} />
+
         <Table actionsColumn={true} />
       </div>
     </div>

@@ -5,7 +5,8 @@ module.exports = {
     fontFamily: { "DM Sans": "sans-serif" },
     extend: {},
     screens: {
-      "2xl": { max: "1535px" },
+      xxxl: { max: "3535px" },
+      xxl: { max: "1535px" },
       // => @media (max-width: 1535px) { ... }
 
       xl: { max: "1279px" },
