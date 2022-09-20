@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchInput from "../components/SearchInput";
 import Sidebar from "../components/Sidebar";
 import bell from "../assets/notification.svg";
@@ -11,6 +11,7 @@ import Table from "../components/Table";
 import "./styles.css";
 
 export default function Task() {
+  const [currentTab, setCurrentTab] = useState("All");
   return (
     <div className="flex ">
       <Sidebar />
@@ -60,7 +61,12 @@ export default function Task() {
             />
           </div>
         </div>
-        <Tab borderRightStyles=" border-b border-gray-200" defaultTab={"All"} />
+        <Tab
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+          defaultTab={currentTab}
+          borderRightStyles=" border-b border-gray-200"
+        />
 
         <Table actionsColumn={true} />
       </div>

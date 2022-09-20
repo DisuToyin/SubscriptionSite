@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Tab from "../components/Tab";
 import back from "../assets/back.svg";
@@ -6,9 +6,14 @@ import back from "../assets/back.svg";
 import bell from "../assets/notification.svg";
 import line from "../assets/Line 8.svg";
 import { useNavigate } from "react-router-dom";
+import MessageComponent from "../components/MessageComponent";
+import Description from "../components/Description";
+import Files from "../components/Files";
 
 export default function SingleTask() {
+  const [currentTab, setCurrentTab] = useState("Messages");
   const navigate = useNavigate();
+
   return (
     <div className="flex ">
       <Sidebar />
@@ -40,17 +45,29 @@ export default function SingleTask() {
           style={{ gridTemplateColumns: "3fr 1fr" }}
         >
           <Tab
+            currentTab={currentTab}
+            setCurrentTab={setCurrentTab}
             borderRightStyles="border-r-[1px] border-r-gray-300"
-            defaultTab={"Messages"}
+            defaultTab={currentTab}
             tabList={["Messages", "Description", "Files"]}
           />
           <div className="self-center">
-            {/* <p className=" text-[#474747] font-semibold pl-[1rem] text-[14px]">
+            <p className=" text-[#474747] font-semibold pl-[1rem] text-[14px]">
               Overview
-            </p> */}
+            </p>
           </div>
         </div>
-        {/* <span className="border-b-[1px]  border-r-gray-300 "></span> */}
+        <div
+          className="grid h-[100]"
+          style={{ gridTemplateColumns: "3fr 1fr" }}
+        >
+          <div className="border-r-[1px]  ml-8 border-r-gray-300">
+            {currentTab === "Messages" && <MessageComponent />}
+            {currentTab === "Description" && <Description />}
+            {currentTab === "Files" && <Files />}
+          </div>
+          <div className="self-center"></div>
+        </div>
       </div>
     </div>
   );
