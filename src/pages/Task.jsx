@@ -13,9 +13,9 @@ import "./styles.css";
 export default function Task() {
   const [currentTab, setCurrentTab] = useState("All");
   return (
-    <div className="flex ">
+    <div className="flex">
       <Sidebar />
-      <div className="w-[100%] ">
+      <div className="w-[100%]" style={{marginLeft:"17rem"}}>
         <div
           className="grid my-3  mx-8"
           style={{ gridTemplateColumns: "2fr 3fr" }}

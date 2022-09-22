@@ -45,7 +45,7 @@ export default function Sidebar() {
     <div
       className={`bg-[#222F51] min-h-screen ${
         open ? "w-72" : "w-16"
-      } duration-500 px-4`}
+      } duration-500 px-4 fixed`}
     >
       <div className="py-5 flex justify-between gap-2 text-white">
         <div className={`${open === false ? "hidden" : ""} pl-3 self-center`}>
