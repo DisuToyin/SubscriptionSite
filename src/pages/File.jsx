@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import back from "../assets/back.svg";
+// import back from "../assets/back.svg";
 import bell from "../assets/notification.svg";
 import line from "../assets/Line 8.svg";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import folderIcon from "../assets/Group.svg";
 import Modal from "../components/Modal";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 
 export default function File() {
   const [open, setOpen] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const folders = [
     { name: "vibes", files: 0 },
@@ -109,7 +109,17 @@ export default function File() {
           </div>
         </div>
       </div>
-      {showModal && <Modal showModal={showModal} setShowModal={setShowModal} />}
+      {showModal && (
+        <Modal
+          showModal={showModal}
+          title={`Test Modal`}
+          setShowModal={setShowModal}
+          accept_btn={"Save"}
+          decline_btn={"Cancel"}
+        >
+          Test body
+        </Modal>
+      )}
     </div>
   );
 }
