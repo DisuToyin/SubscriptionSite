@@ -60,11 +60,8 @@ export default function SingleTask() {
             </p>
           </div>
         </div>
-        <div
-          className="grid h-[100%]"
-          style={{ gridTemplateColumns: "3fr 1fr" }}
-        >
-          <div className="border-r-[1px]  ml-8 border-r-gray-300">
+        <div className="grid" style={{ gridTemplateColumns: "3fr 1fr" }}>
+          <div className="border-r-[1px] h-screen ml-8 border-r-gray-300">
             {currentTab === "Messages" && <MessageComponent />}
             {currentTab === "Description" && <Description />}
             {currentTab === "Files" && <Files />}
