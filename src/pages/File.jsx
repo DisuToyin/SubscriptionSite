@@ -6,6 +6,7 @@ import line from "../assets/Line 8.svg";
 import { useNavigate } from "react-router-dom";
 import folderIcon from "../assets/Group.svg";
 import Modal from "../components/Modal";
+import Button from "../components/Button";
 
 export default function File() {
   const [open, setOpen] = useState(true);
@@ -50,7 +51,22 @@ export default function File() {
           className="grid  border-b border-gray-200"
           style={{ gridTemplateColumns: "3fr 1fr" }}
         >
-          <b className="ml-12 border-r-[1px] py-4 border-r-gray-300">Files</b>
+          <div className="flex border-r-[1px] items-center justify-between border-r-gray-300 ml-12  py-4">
+            <b className="">Files</b>
+            <button
+              onClick={() => setShowModal(true)}
+              className="outline bg-white mr-3 p-1 text-[12px]"
+            >
+              Add Files
+            </button>
+            {/* <Button
+              icon={true}
+              handleClick={() => setShowModal(true)}
+              button_text={"Add File"}
+              other_styles={`bg-[#E9724C] hover:bg-[black] text-white w-[auto] py-[0.5rem] text-[14px]`}
+            /> */}
+          </div>
+
           {/* <Tab
             currentTab={currentTab}
             setCurrentTab={setCurrentTab}
@@ -83,23 +99,13 @@ export default function File() {
                       <span className="text-[#8C96BF] text-[12px]">
                         {folder.files === 0
                           ? "empty folder"
-                          : folder.files + "files"}
+                          : folder.files + " files"}
                       </span>
                     </div>
                   </div>
                 );
               })}
             </div>
-          </div>
-          <div className="self-center">
-            <button
-              className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              type="button"
-              onClick={() => setShowModal(true)}
-              data-modal-toggle="defaultModal"
-            >
-              Toggle modal
-            </button>
           </div>
         </div>
       </div>
