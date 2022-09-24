@@ -15,9 +15,9 @@ export default function SingleTask() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex ">
+    <div className="">
       <Sidebar />
-      <div className="w-[100%]">
+      <div className="w-[100%] inline-block">
         <div
           className="grid my-3  mx-8"
           style={{ gridTemplateColumns: "2fr 3fr" }}
@@ -58,7 +58,7 @@ export default function SingleTask() {
           </div>
         </div>
         <div
-          className="grid h-[100]"
+          className="grid h-[100%]"
           style={{ gridTemplateColumns: "3fr 1fr" }}
         >
           <div className="border-r-[1px]  ml-8 border-r-gray-300">

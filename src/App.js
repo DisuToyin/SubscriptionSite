@@ -10,6 +10,7 @@ import Onboarding from "./pages/Onboarding";
 import Task from "./pages/Task";
 import Project from "./pages/Project";
 import SingleTask from "./pages/SingleTask";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/p" element={<Project />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/onboard" element={<Onboarding />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
     </div>
