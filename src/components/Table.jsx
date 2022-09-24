@@ -147,6 +147,107 @@ export default function Table({
                 />
               </td>
             </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td className="py-4 px-6">
+                <img src={ecllipse} alt="ellipse" />
+              </td>
+              <th
+                scope="row"
+                className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                <Link to="/task/1">Astral Projections</Link>
+              </th>
+              <td className="py-4 px-6">Sliver</td>
+              <td className="py-4 px-6">
+                <Badge badgeText={"Completed"} />
+              </td>
+              <td className="py-4 px-6">
+                {" "}
+                <Link to="/task/1">$2999 </Link>
+              </td>
+              <td></td>
+              <td className="py-4 px-6">
+                <FiMoreHorizontal
+                  size={26}
+                  className="cursor-pointer"
+                  onClick={() => handleTask()}
+                />
+              </td>
+            </tr>
+
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td className="py-4 px-6">
+                <img src={ecllipse} alt="ellipse" />
+              </td>
+              <th
+                scope="row"
+                className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Astral Projections
+              </th>
+              <td className="py-4 px-6">Sliver</td>
+              <td className="py-4 px-6">
+                <Badge
+                  badgeText={"Ongoing"}
+                  extraStyles={"bg-[#FFF0E4] text-[#FDA700]"}
+                />
+              </td>
+              <td className="py-4 px-6">$2999</td>
+              <td></td>
+              <td className="py-4 px-6">
+                <FiMoreHorizontal
+                  size={26}
+                  className="cursor-pointer"
+                  onClick={() => handleTask()}
+                />
+              </td>
+            </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td className="py-4 px-6">
+                <img src={ecllipse} alt="ellipse" />
+              </td>
+              <th
+                scope="row"
+                className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Astral Projections
+              </th>
+              <td className="py-4 px-6">White</td>
+              <td className="py-4 px-6">
+                <Badge badgeText={"Queued"} />
+              </td>
+              <td className="py-4 px-6">$1999</td>
+              <td></td>
+              <td className="py-4 px-6">
+                <FiMoreHorizontal
+                  size={26}
+                  className="cursor-pointer"
+                  onClick={() => handleTask()}
+                />
+              </td>
+            </tr>
+            <tr className="bg-white dark:bg-gray-800">
+              <td className="py-4 px-6">
+                <img src={ecllipse} alt="ellipse" />
+              </td>
+              <th
+                scope="row"
+                className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Astral Projections
+              </th>
+              <td className="py-4 px-6">Black</td>
+              <td className="py-4 px-6">Accessories</td>
+              <td className="py-4 px-6">$99</td>
+              <td></td>
+              <td className="py-4 px-6">
+                <FiMoreHorizontal
+                  size={26}
+                  className="cursor-pointer"
+                  onClick={() => handleTask()}
+                />
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -11,11 +11,14 @@ import Table from "../components/Table";
 import "./styles.css";
 
 export default function Task() {
+  const [open, setOpen] = useState(true);
   const [currentTab, setCurrentTab] = useState("All");
   return (
-    <div className="flex ">
-      <Sidebar />
-      <div className="w-[100%] ">
+    <div className="flex">
+      <Sidebar open={open} setOpen={setOpen} />
+      <div
+        className={`w-[100%] ${open ? "ml-[17rem]" : "ml-[4rem]"} duration-500`}
+      >
         <div
           className="grid my-3  mx-8"
           style={{ gridTemplateColumns: "2fr 3fr" }}

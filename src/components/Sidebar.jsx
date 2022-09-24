@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { HiMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import task from "../assets/task.svg";
@@ -8,8 +8,7 @@ import schedule from "../assets/schedule.svg";
 import help from "../assets/help.svg";
 import logo from "../assets/White.svg";
 
-export default function Sidebar() {
-  const [open, setOpen] = useState(true);
+export default function Sidebar({ open, setOpen }) {
   const menus = [
     {
       name: "Tasks",
@@ -45,7 +44,7 @@ export default function Sidebar() {
     <div
       className={`bg-[#222F51] h-[100vh] ${
         open ? "w-72" : "w-16"
-      } duration-500 px-4 fixed left-0 top-0 z-[1]`}
+      } duration-500 px-4 fixed`}
     >
       <div className="py-5 flex justify-between gap-2 text-white">
         <div className={`${open === false ? "hidden" : ""} pl-3 self-center`}>

@@ -12,12 +12,15 @@ import Files from "../components/Files";
 
 export default function SingleTask() {
   const [currentTab, setCurrentTab] = useState("Messages");
+  const [open, setOpen] = useState(true);
   const navigate = useNavigate();
 
   return (
-    <div className="">
-      <Sidebar />
-      <div className="w-[100%] inline-block">
+    <div className="flex">
+      <Sidebar open={open} setOpen={setOpen} />
+      <div
+        className={`w-[100%] ${open ? "ml-[17rem]" : "ml-[4rem]"} duration-500`}
+      >
         <div
           className="grid my-3  mx-8"
           style={{ gridTemplateColumns: "2fr 3fr" }}
