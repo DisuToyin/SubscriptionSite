@@ -23,6 +23,51 @@
   color: #000000;
   margin-bottom: -1rem;
 }
+
+.specialHover:hover {
+  color: white;
+  background-color: #e9724c;
+  /* background-color: red; */
+}
+
+.specialHover:hover h3 {
+  color: white;
+}
+
+.specialHover:hover p {
+  color: white;
+}
+
+.specialHover:hover svg {
+  color: white;
+}
+
+.specialHover:hover path {
+  stroke: white;
+}
+
+.specialHover:hover .priceTag {
+  color: white;
+}
+
+.specialHover:hover .carrilBtn {
+  background-color: white;
+  color: #e9724c;
+}
+
+.specialHover:hover .billingFlag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.specialHover:hover .billingToggle {
+  background-color: white;
+}
+
+.specialHover:hover .featureBtn {
+  background-color: #b4583b;
+}
+
 @media screen and (max-width: 3000px) {
   .big-screen {
     max-width: fit-content;

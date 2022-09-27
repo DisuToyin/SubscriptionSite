@@ -1,11 +1,14 @@
 import React from "react";
 import Toggle from "../components/Toggle";
 import Button from "../components/Button";
+import "../pages/styles.css";
+
 export default function Card({ card_type, target_audience }) {
   return (
-    <div className="flex flex-col rounded-[4rem]  p-6 mx-auto max-w-lg text-left text-gray-900 bg-white rounded-lg border border-gray-100 shadow xl:p-8 ">
+    <div className="specialHover flex flex-col rounded-[4rem] p-6 mx-auto max-w-lg text-left text-gray-900 bg-white rounded-lg border border-gray-100 shadow xl:p-8 ">
       <div className="flex items-baseline gap-2">
         <svg
+          className="svgElement"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -34,7 +37,7 @@ export default function Card({ card_type, target_audience }) {
             stroke-linejoin="round"
           />
         </svg>
-        <h3 className="mb-4 text-[#2F3941] text-[32px] font-semibold">
+        <h3 className=" mb-4 text-[#2F3941] text-[32px] font-semibold">
           {card_type}
         </h3>
       </div>
@@ -42,15 +45,15 @@ export default function Card({ card_type, target_audience }) {
         {target_audience}
       </p>
       <div className="flex justify-left items-baseline mt-12 mb-2">
-        <span className="mr-2 text-5xl text-[64px] text-[#87929D]  font-normal">
+        <span className=" mr-2 text-5xl text-[64px] text-[#C1C7CC]  font-normal">
           $
         </span>
-        <span className="mr-2 text-5xl  text-[64px] text-[#2F3941] font-normal">
+        <span className="priceTag mr-2 text-5xl  text-[64px] text-[#2F3941] font-normal">
           2900
         </span>
-        <span className="text-[#87929D]">per month</span>
+        <span className="priceTag text-[#87929D]">per month</span>
       </div>
-      <div className="mb-10 rounded-sm bg-[#E6EAFF] w-fit pl-2 pr-2 flex gap-2 text-[#222F51]">
+      <div className="billingFlag mb-10 rounded-sm bg-[#E6EAFF] w-fit pl-2 pr-2 flex gap-2 text-[#222F51]">
         <Toggle />
         <span>Billed monthly</span>
       </div>
@@ -72,9 +75,9 @@ export default function Card({ card_type, target_audience }) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
           <span>Individual configuration</span>
@@ -146,6 +149,9 @@ export default function Card({ card_type, target_audience }) {
           </span>
         </li>
       </ul>
+      <button className="featureBtn bg-[#E9EBED] py-3 font-bold">
+        See all features
+      </button>
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function Button({
           disabled={disabled}
           type={button_type}
           onClick={handleClick}
-          className={`pl-[20px] pr-[20px]  text-base  mt-[3%] w-[100%]  focus:outline-none  font-medium px-5 py-2.5 text-center  rounded-[2px] ${other_styles}`}
+          className={`pl-[20px] pr-[20px]  text-base  mt-[3%] w-[100%]  focus:outline-none  font-medium px-5 py-2.5 text-center  rounded-[2px] carrilBtn ${other_styles}`}
         >
           {button_text}
         </button>
