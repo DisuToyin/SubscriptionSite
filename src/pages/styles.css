@@ -68,6 +68,10 @@
   background-color: #b4583b;
 }
 
+.webkitClass {
+  text-align: -webkit-center;
+}
+
 @media screen and (max-width: 3000px) {
   .big-screen {
     max-width: fit-content;

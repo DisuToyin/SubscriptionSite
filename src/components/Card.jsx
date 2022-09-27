@@ -2,8 +2,15 @@ import React from "react";
 import Toggle from "../components/Toggle";
 import Button from "../components/Button";
 import "../pages/styles.css";
+import { Link } from "react-router-dom";
 
-export default function Card({ card_type, target_audience }) {
+export default function Card({
+  card_type,
+  target_audience,
+  features_list = [],
+  cost,
+  id,
+}) {
   return (
     <div className="specialHover flex flex-col rounded-[4rem] p-6 mx-auto max-w-lg text-left text-gray-900 bg-white rounded-lg border border-gray-100 shadow xl:p-8 ">
       <div className="flex items-baseline gap-2">
@@ -49,7 +56,7 @@ export default function Card({ card_type, target_audience }) {
           $
         </span>
         <span className="priceTag mr-2 text-5xl  text-[64px] text-[#2F3941] font-normal">
-          2900
+          {cost}
         </span>
         <span className="priceTag text-[#87929D]">per month</span>
       </div>
@@ -58,96 +65,36 @@ export default function Card({ card_type, target_audience }) {
         <span>Billed monthly</span>
       </div>
       {/* #4A908A */}
-      <Button
-        other_styles={`bg-[#222F51] text-white mb-10`}
-        button_text={"Select Plan"}
-      />
+      <Link to={`/pricing/${id}`}>
+        <Button
+          other_styles={`bg-[#222F51] text-white mb-10`}
+          button_text={"Select Plan"}
+        />
+      </Link>
 
       <ul className="mb-8 space-y-4 text-left">
         <li className="flex items-center space-x-3">
-          <span className="font-semibold">Starter includes</span>
+          <span className="font-semibold">{card_type} includes</span>
         </li>
-        <li className="flex items-center space-x-3">
-          <svg
-            className="flex-shrink-0 w-5 h-5 text-[#222F51] "
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <span>Individual configuration</span>
-        </li>
-        <li className="flex items-center space-x-3">
-          <svg
-            className="flex-shrink-0 w-5 h-5 text-[#222F51]"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <span>No setup, or hidden fees</span>
-        </li>
-        <li className="flex items-center space-x-3">
-          <svg
-            className="flex-shrink-0 w-5 h-5 text-[#222F51]"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <span>
-            Team size: <span className="font-semibold">1 developer</span>
-          </span>
-        </li>
-        <li className="flex items-center space-x-3">
-          <svg
-            className="flex-shrink-0 w-5 h-5 text-[#222F51]"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <span>
-            Premium support: <span className="font-semibold">6 months</span>
-          </span>
-        </li>
-        <li className="flex items-center space-x-3">
-          <svg
-            className="flex-shrink-0 w-5 h-5 text-[#222F51] "
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <span>
-            Free updates: <span className="font-semibold">6 months</span>
-          </span>
-        </li>
+        {features_list?.map((feat) => {
+          return (
+            <li className="flex items-center space-x-3">
+              <svg
+                className="flex-shrink-0 w-5 h-5 text-[#222F51] "
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              <span>{feat}</span>
+            </li>
+          );
+        })}
       </ul>
       <button className="featureBtn bg-[#E9EBED] py-3 font-bold">
         See all features

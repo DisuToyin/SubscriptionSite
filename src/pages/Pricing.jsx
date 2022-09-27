@@ -1,11 +1,25 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
 
 import Card from "../components/Card";
 import { Navbar } from "../components/Navbar";
 import Toggle from "../components/Toggle";
 
 export const Pricing = () => {
-  // const [plan, setPlan] = useState("monthly");
+  const [plans, setPlans] = useState([]);
+
+  const getPlans = async () => {
+    console.log("plans loading ");
+    const data = await axios.get("/api/plan");
+    console.log(data?.data?.result);
+    setPlans(data?.data?.result);
+  };
+
+  useEffect(() => {
+    getPlans();
+  }, []);
+
   return (
     <div className="bg-[#E5E5E5]">
       <Navbar pageName="pricing" margin_btm={"mb-[5%]"} />
@@ -24,9 +38,20 @@ export const Pricing = () => {
           </div>
         </div>
         <div className="grid grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-2  pl-[48px] pr-[48px] lg:pl-[30px] lg:pl-[30px] max-width-[688px]">
-          <Card card_type={"Starter"} target_audience={"For start-ups"} />
-          <Card card_type={"Business"} target_audience={"For marketers"} />
-          <Card card_type={"Suite"} target_audience={"For large companies"} />
+          {plans?.map((plan) => {
+            return (
+              // <Link to={`/pricing/${plan?._id}`}>
+              <Card
+                key={plan?._id}
+                id={plan?._id}
+                card_type={plan?.title}
+                target_audience={"For start-ups"}
+                features_list={plan?.features_id?.feature_name}
+                cost={plan?.cost}
+              />
+              // </Link>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import Task from "./pages/Task";
 import Project from "./pages/Project";
 import SingleTask from "./pages/SingleTask";
 import File from "./pages/File";
+import PriceDetails from "./pages/PriceDetails";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/task/:taskId" element={<SingleTask />} />
           <Route path="/p" element={<Project />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="pricing/:id" element={<PriceDetails />} />
           <Route path="/onboard" element={<Onboarding />} />
           <Route path="/files" element={<File />} />
         </Routes>
