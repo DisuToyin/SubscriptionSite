@@ -45,7 +45,7 @@ export const Register = () => {
               <h3 className="font-bold text-[24px] mb-10">Join Carril</h3>
               <div className="flex mb-6">
                 <div className="mr-[5%] w-1/2">
-                  <label className="block mb-2 text-sm font-normal text-gray-900 dark:text-gray-300">
+                  <label className="block mb-2 text-sm font-normal text-gray-900 ">
                     First name
                   </label>
                   <input
@@ -53,13 +53,13 @@ export const Register = () => {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     id="first_name"
-                    className=" border pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-gray-300 text-gray-900 focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white rounded-[2px]"
+                    className=" border pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border-gray-300 text-gray-900 focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full  rounded-[2px]"
                     placeholder="Enter your first name"
                     required
                   />
                 </div>
                 <div className="w-1/2">
-                  <label className=" block mb-2 text-sm font-normal text-gray-900 dark:text-gray-300">
+                  <label className=" block mb-2 text-sm font-normal text-gray-900 ">
                     Last name
                   </label>
                   <input
@@ -67,7 +67,7 @@ export const Register = () => {
                     id="last_name"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    className="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border border-gray-300 text-gray-900 rounded-[2px] focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
+                    className="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base border border-gray-300 text-gray-900 rounded-[2px] focus:outline-0 focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 "
                     placeholder="Enter your last name"
                     required
                   />
@@ -75,7 +75,7 @@ export const Register = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block mb-2 text-sm font-normal text-gray-900 dark:text-gray-300">
+                <label className="block mb-2 text-sm font-normal text-gray-900 ">
                   Email
                 </label>
                 <input
@@ -83,13 +83,13 @@ export const Register = () => {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-[2px]  border-solid border-[1px] text-gray-900  focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+                  className="pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-[2px]  border-solid border-[1px] text-gray-900  focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 "
                   placeholder="Enter your work email"
                   required=""
                 />
               </div>
               <div className="mb-6">
-                <label className="  block mb-2 text-sm font-normal text-gray-900 dark:text-gray-300">
+                <label className="  block mb-2 text-sm font-normal text-gray-900 ">
                   Password
                 </label>
                 <input
@@ -97,7 +97,7 @@ export const Register = () => {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-[2px]  border-solid border-[1px] text-gray-900   focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                  className=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base focus:outline-0 rounded-[2px]  border-solid border-[1px] text-gray-900   focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 "
                   required=""
                   placeholder="Enter your password"
                 />
@@ -106,14 +106,14 @@ export const Register = () => {
               {isLoading ? (
                 <button
                   type="submit"
-                  className=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base text-white mt-[3%] w-[100%] bg-[#E9724C] hover:bg-[#e98260] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[2px] "
+                  className=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base text-white mt-[3%] w-[100%] bg-[#E9724C] hover:bg-[#e98260] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-5 py-2.5 text-center  rounded-[2px] "
                 >
                   <Spinner />
                 </button>
               ) : (
                 <button
                   type="submit"
-                  className=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base text-white mt-[3%] w-[100%] bg-[#E9724C] hover:bg-[#e98260] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-[2px] "
+                  className=" pl-[20px] pr-[20px] pt-[16px] pb-[16px] text-base text-white mt-[3%] w-[100%] bg-[#E9724C] hover:bg-[#e98260] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-5 py-2.5 text-center  rounded-[2px] "
                 >
                   Next
                 </button>
