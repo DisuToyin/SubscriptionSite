@@ -8,6 +8,7 @@ import Vect from "../assets/Vector.svg";
 import tasks from "../data/data";
 import book from "../assets/book.svg";
 import arrow from "../assets/arrowright.svg";
+import { useSelector } from "react-redux";
 
 export default function Onboarding() {
   const [formStep, setFormStep] = useState(0);
@@ -20,7 +21,7 @@ export default function Onboarding() {
     taskName: "",
   });
 
-  console.log(formData);
+  const { user } = useSelector((state) => state.auth);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -40,7 +41,9 @@ export default function Onboarding() {
           <img src={onboard} alt="logo" />
         </div>
         <div className="text-[#C6C6C6] mt-[100px] ml-[80px]">
-          <p className="text-[14px]">Welcome to Carril, Anthony!</p>
+          <p className="text-[14px]">
+            Welcome to Carril, {user?.data?.first_name}!
+          </p>
           <h2 className="text-[24px] py-[16px] font-bold">
             Set Up Your Account
           </h2>
@@ -83,7 +86,7 @@ export default function Onboarding() {
       </div>
       <div className="block bg-[#222F51]">
         <div className="mt-[20px] mr-[28px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
-          AD
+          {user?.data?.first_name[0] + user?.data?.last_name[0]}
         </div>
         <div className="flex mt-[7%] content-center items-center">
           {formStep === 0 && (

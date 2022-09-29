@@ -3,14 +3,50 @@ import C from "../assets/Frame 87.svg";
 import Input from "../components/Input";
 import Button from "../components/Button";
 // import OnboardModal from "../components/OnboardModal";
+import { useNavigate } from "react-router-dom";
+import PopModal from "../components/PopUpModal";
+
+import { useDispatch } from "react-redux";
+import { login } from "../slices/authslice";
+import Spinner from "../components/Spinner";
 
 export const Signin = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  const handleClick = () => {};
+  const [showModal, setShowModal] = useState(false);
+  const [responseText, setResponseText] = useState("");
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  function timeout(delay) {
+    return new Promise((res) => setTimeout(res, delay));
+  }
+
+  const handleClick = async () => {
+    setIsLoading(true);
+    const result = await dispatch(login(formData));
+    if (result.payload.status === 200) {
+      localStorage.setItem("user_id", result.payload.data.user_id);
+      localStorage.setItem("first_name", result.payload.data.first_name);
+      localStorage.setItem("last_name", result.payload.data.last_name);
+
+      //check if customer has active sub
+      navigate("/onboard");
+    } else {
+      setResponseText(result.payload);
+      setIsLoading(false);
+      setShowModal(true);
+      await timeout(2000);
+      setShowModal(false);
+    }
+    setIsLoading(false);
+  };
 
   return (
     <div className="grid grid-cols-2 [h-100vh] fixed">
@@ -56,7 +92,7 @@ export const Signin = () => {
               button_type="button"
               handleClick={handleClick}
               other_styles={`bg-[#E9724C] text-white mb-5`}
-              button_text={"Next"}
+              button_text={isLoading ? <Spinner /> : `Next`}
             />
 
             <p class="text-center mt-[5%] font-normal">
@@ -68,6 +104,14 @@ export const Signin = () => {
           </form>
         </div>
       </div>
+      {showModal === true && (
+        <PopModal
+          showModal={showModal}
+          error={true}
+          message={responseText}
+          setShowModal={setShowModal}
+        />
+      )}
     </div>
   );
   //   https://snazzy-cannoli-c82985.netlify.app/

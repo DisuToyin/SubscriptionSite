@@ -26,13 +26,18 @@ export default function PriceDetails() {
   };
 
   const createPaymentCheckOut = async () => {
-    const payload = {
-      payment_platform: "stripe",
-      plan_id: id,
-      user_id: localStorage.getItem("user_id"),
-    };
-    const { data } = await axios.post(`/api/payment`, payload);
-    console.log(data);
+    try {
+      const payload = {
+        payment_platform: "stripe",
+        plan_id: id,
+        user_id: localStorage.getItem("user_id"),
+      };
+      const { data } = await axios.post(`/api/payment`, payload);
+      console.log(data);
+      window.location.href = data.link;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -41,7 +46,7 @@ export default function PriceDetails() {
 
   return (
     <div className="">
-      <Navbar />
+      <Navbar pageName="payment" />
       <div className="h-screen flex">
         <div className="bg-[white] px-[2rem] pt-[2rem]   flex-1 w-[50%]">
           <div className="w-[65%] m-auto">
@@ -115,6 +120,12 @@ export default function PriceDetails() {
             <h2 className="border-b-[1px] font-bold border-b-[#E2E2E2] pb-[1.5rem] text-[18px]">
               Summary
             </h2>
+            <div className="flex gap-10 my-6">
+              <h2 className="font-bold self-center text-[18px]">Your Plan: </h2>
+              <h2 className="text-[#E9724C] text-[28px] font-bold">
+                {plan?.title}
+              </h2>
+            </div>
           </div>
         </div>
       </div>
