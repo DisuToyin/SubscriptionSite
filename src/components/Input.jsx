@@ -12,7 +12,7 @@ export default function Input({
   isRequired = false,
 }) {
   return (
-    <div className={`${marginBtm}`}>
+    <div className={`${marginBtm}`} style={{ width: "100%" }}>
       <label className={`block mb-2 text-[16px] font-normal text-[#474747] `}>
         {label}
       </label>

@@ -9,9 +9,14 @@ import tasks from "../data/data";
 import book from "../assets/book.svg";
 import arrow from "../assets/arrowright.svg";
 import { useSelector } from "react-redux";
+import CountryCodeWidget from "../components/CountryCodeWidget";
+import "../pages/styles.css";
+import RichTextEditor from "../components/RichTextEditor";
+import FIleUpload from "../components/FIleUpload";
 
 export default function Onboarding() {
-  const [formStep, setFormStep] = useState(0);
+  const [formStep, setFormStep] = useState(4);
+  // const [showDrop, setShowDrop] = useState(false);
   const [formData, setFormData] = useState({
     businessName: "",
     industry: "",
@@ -59,7 +64,7 @@ export default function Onboarding() {
                 <span className="text-[#ABABAB]">Account details</span>
               </li>
             )}
-            {formStep > 1 && formStep <= 3 ? (
+            {formStep > 1 && formStep <= 4 ? (
               <li className="flex gap-6">
                 <img src={arrow} alt="arrorw" />{" "}
                 <span className="text-[#FFFFFF]">Setup task brief</span>
@@ -70,7 +75,7 @@ export default function Onboarding() {
                 <span className="text-[#ABABAB]">Setup task brief</span>
               </li>
             )}
-            {formStep === 4 ? (
+            {formStep === 5 ? (
               <li className="flex gap-6">
                 <img src={arrow} alt="arrorw" />{" "}
                 <span className="text-[#FFFFFF]">Submit</span>
@@ -85,8 +90,9 @@ export default function Onboarding() {
         </div>
       </div>
       <div className="block bg-[#222F51]">
-        <div className="mt-[20px] mr-[28px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
+        <div className="mt-[20px]  mr-[28px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
           {user?.data?.first_name[0] + user?.data?.last_name[0]}
+          {/* <Dropdown /> */}
         </div>
         <div className="flex mt-[7%] content-center items-center">
           {formStep === 0 && (
@@ -100,7 +106,7 @@ export default function Onboarding() {
                 }
                 isRequired={true}
                 inputType={"text"}
-                extraStyles={"mb-[2rem]"}
+                extraStyles={"mb-[2rem]  "}
               />
               <Input
                 label={"What industry does your company operate in?"}
@@ -133,17 +139,23 @@ export default function Onboarding() {
           )}
           {formStep === 1 && (
             <OnboardModal title={"Set up Account"}>
-              <Input
-                label={"Enter your work/personal phone number"}
-                isRequired={true}
-                value={formData.telephone}
-                name="telephone"
-                handleInputChange={(e) =>
-                  setFormData({ ...formData, telephone: e.target.value })
-                }
-                inputType={"number"}
-                extraStyles={"mb-[2rem]"}
-              />
+              <>
+                Enter your work/personal phone number
+                <div className="flex items-center">
+                  <CountryCodeWidget />
+                  <Input
+                    // label={"Enter your work/personal phone number"}
+                    isRequired={true}
+                    value={formData.telephone}
+                    name="telephone"
+                    handleInputChange={(e) =>
+                      setFormData({ ...formData, telephone: e.target.value })
+                    }
+                    inputType={"number"}
+                    extraStyles={"mb-[2rem]"}
+                  />
+                </div>
+              </>
               <Input
                 label={"How did you hear about us?"}
                 value={formData.aboutUs}
@@ -238,6 +250,28 @@ export default function Onboarding() {
             </OnboardModal>
           )}
           {formStep === 4 && (
+            <OnboardModal title={"New Task Request"}>
+              <span className="mb-10 text-[#474747]">Task Description</span>
+              <RichTextEditor />
+              <span className="mb-10 text-[#474747]">Files</span>
+              <FIleUpload />
+              <div className="flex justify-between ">
+                <Button
+                  button_type="button"
+                  handleClick={handleOnboarding}
+                  other_styles={`bg-[white] text-[black] border-gray-500 border-[2px] mb-10 w-min`}
+                  button_text={"Back"}
+                />
+                <Button
+                  button_type="button"
+                  handleClick={handleOnboarding}
+                  other_styles={`bg-[#E9724C] text-white mb-10 w-min`}
+                  button_text={"Submit"}
+                />
+              </div>
+            </OnboardModal>
+          )}
+          {formStep === 5 && (
             <OnboardModal
               title_styles="text-center"
               title={"Thanks for choosing carril"}

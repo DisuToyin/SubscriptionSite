@@ -79,3 +79,13 @@
     margin-right: auto;
   }
 }
+
+.demo-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editor-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}

@@ -3,10 +3,10 @@ import React from "react";
 export default function Select(props) {
   return (
     <div>
-      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+      <label className="block mb-2 text-sm font-medium text-gray-900">
         {props.labelName}
       </label>
-      <select className=" h-[42px] bg-[white] border border-[#E2E2E2] text-[#ABABAB] pr-2 text-sm rounded-[2px] outline-none focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#E9724C] dark:focus:border-[#E9724C]">
+      <select className=" bg-[white] border border-[#E2E2E2] text-[#ABABAB] pr-2 text-sm rounded-[2px] outline-none focus:ring-[#E9724C] focus:border-[#E9724C] block w-full p-2.5">
         <option selected>{props.defaultOption}</option>
         {/* <option value="US">United States</option>
         <option value="CA">Canada</option>
