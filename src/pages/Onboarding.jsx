@@ -13,10 +13,12 @@ import CountryCodeWidget from "../components/CountryCodeWidget";
 import "../pages/styles.css";
 import RichTextEditor from "../components/RichTextEditor";
 import FIleUpload from "../components/FIleUpload";
+import DropDown from "../components/Dropdown";
+import WhiteArrowDown from "../assets/whiteArrowUp.svg";
 
 export default function Onboarding() {
-  const [formStep, setFormStep] = useState(4);
-  // const [showDrop, setShowDrop] = useState(false);
+  const [formStep, setFormStep] = useState(5);
+  const [showDrop, setShowDrop] = useState(false);
   const [formData, setFormData] = useState({
     businessName: "",
     industry: "",
@@ -31,7 +33,11 @@ export default function Onboarding() {
   const handleClick = (e) => {
     e.preventDefault();
     setFormStep((curr) => curr + 1);
-    console.log("here");
+  };
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    setFormStep((curr) => curr - 1);
   };
 
   const handleOnboarding = (e) => {};
@@ -45,7 +51,7 @@ export default function Onboarding() {
         <div className="mt-[23px] ml-[28px]">
           <img src={onboard} alt="logo" />
         </div>
-        <div className="text-[#C6C6C6] mt-[100px] ml-[80px]">
+        <div className="text-[#C6C6C6] mt-[100px] ml-[20%] md:ml-[10%]">
           <p className="text-[14px]">
             Welcome to Carril, {user?.data?.first_name}!
           </p>
@@ -90,10 +96,25 @@ export default function Onboarding() {
         </div>
       </div>
       <div className="block bg-[#222F51]">
-        <div className="mt-[20px]  mr-[28px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
-          {user?.data?.first_name[0] + user?.data?.last_name[0]}
-          {/* <Dropdown /> */}
-        </div>
+        {formStep < 5 ? (
+          <div className="mt-[20px]  mr-[28px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
+            {user?.data?.first_name[0] + user?.data?.last_name[0]}
+          </div>
+        ) : (
+          <div className="flex gap-2">
+            <div className="mt-[20px]  mr-[20px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
+              {user?.data?.first_name[0] + user?.data?.last_name[0]}
+            </div>
+            <div className="mt-[30px] cursor-pointer mr-[28px]">
+              <img
+                src={WhiteArrowDown}
+                onClick={() => setShowDrop(!showDrop)}
+                alt="arrowupdropdown"
+              />
+              {showDrop === true && <DropDown />}
+            </div>
+          </div>
+        )}
         <div className="flex mt-[7%] content-center items-center">
           {formStep === 0 && (
             <OnboardModal title={"Set up Account"}>
@@ -258,13 +279,13 @@ export default function Onboarding() {
               <div className="flex justify-between ">
                 <Button
                   button_type="button"
-                  handleClick={handleOnboarding}
+                  handleClick={handleBack}
                   other_styles={`bg-[white] text-[black] border-gray-500 border-[2px] mb-10 w-min`}
                   button_text={"Back"}
                 />
                 <Button
                   button_type="button"
-                  handleClick={handleOnboarding}
+                  handleClick={handleClick}
                   other_styles={`bg-[#E9724C] text-white mb-10 w-min`}
                   button_text={"Submit"}
                 />
