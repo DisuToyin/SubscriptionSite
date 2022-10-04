@@ -210,6 +210,7 @@ export default function Onboarding() {
           {formStep === 2 && (
             <OnboardModal
               sub_title="Choose from the options below"
+              moreStyles={"h-[500px] overflow-y-scroll"}
               title={"Create your first task"}
             >
               {tasks.map((task) => {
@@ -271,7 +272,10 @@ export default function Onboarding() {
             </OnboardModal>
           )}
           {formStep === 4 && (
-            <OnboardModal title={"New Task Request"}>
+            <OnboardModal
+              moreStyles={"h-[500px] overflow-y-scroll"}
+              title={"New Task Request"}
+            >
               <span className="mb-10 text-[#474747]">Task Description</span>
               <RichTextEditor />
               <span className="mb-10 text-[#474747]">Files</span>
