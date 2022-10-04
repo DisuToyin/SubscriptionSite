@@ -17,7 +17,7 @@ import DropDown from "../components/Dropdown";
 import WhiteArrowDown from "../assets/whiteArrowUp.svg";
 
 export default function Onboarding() {
-  const [formStep, setFormStep] = useState(5);
+  const [formStep, setFormStep] = useState(0);
   const [showDrop, setShowDrop] = useState(false);
   const [formData, setFormData] = useState({
     businessName: "",

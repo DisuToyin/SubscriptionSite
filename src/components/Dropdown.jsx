@@ -7,19 +7,10 @@ export default function Dropdown() {
         <div>Bonnie Green</div>
         <div className="font-medium truncate">name@flowbite.com</div>
       </div>
-      <ul
+      {/* <ul
         className="py-1 text-sm text-gray-700 dark:text-gray-200"
         aria-labelledby="dropdownInformationButton"
-      >
-        <li>
-          <a
-            href="#"
-            className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Dashboard
-          </a>
-        </li>
-      </ul>
+      ></ul> */}
       <div className="py-1">
         <a
           href="#"

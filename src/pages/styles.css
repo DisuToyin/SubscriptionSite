@@ -68,6 +68,18 @@
   background-color: #b4583b;
 }
 
+.rectCardHover:hover span {
+  color: white;
+}
+
+.rectCardHover:hover svg {
+  color: white;
+}
+
+.rectCardHover:hover path {
+  color: white;
+}
+
 .webkitClass {
   text-align: -webkit-center;
 }
