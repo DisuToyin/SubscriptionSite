@@ -7,7 +7,7 @@ export default function CountryCodeWidget() {
       {countryCode?.map((ops) => {
         return (
           <option value={ops.key || ops} key={ops.key || ops}>
-            {ops.code}({ops.dial_code})
+            {ops.flag} {ops.code} ({ops.dial_code})
           </option>
         );
       })}

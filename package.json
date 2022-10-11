@@ -2,7 +2,7 @@
   "name": "zebra",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:6000",
+  "proxy": "http://kubernetescluster.loclx.io",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^35.1.0",
     "@ckeditor/ckeditor5-react": "^5.0.2",
@@ -19,6 +19,7 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.35.0",
     "react-icons": "^4.4.0",
+    "react-phone-input-2": "^2.15.1",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",

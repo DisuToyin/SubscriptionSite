@@ -15,6 +15,7 @@ import RichTextEditor from "../components/RichTextEditor";
 import FIleUpload from "../components/FIleUpload";
 import DropDown from "../components/Dropdown";
 import WhiteArrowDown from "../assets/whiteArrowUp.svg";
+import ReactCountryCode from "../components/ReactCountryCode";
 
 export default function Onboarding() {
   const [formStep, setFormStep] = useState(0);
@@ -176,6 +177,7 @@ export default function Onboarding() {
                     extraStyles={"mb-[2rem]"}
                   />
                 </div>
+                {/* <ReactCountryCode /> */}
               </>
               <Input
                 label={"How did you hear about us?"}
