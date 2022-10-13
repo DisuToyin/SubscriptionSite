@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import axios from "axios";
 import tableIcon from "../assets/tableIcon.svg";
 import chatIcon from "../assets/chatBox.svg";
@@ -26,15 +26,15 @@ export default function Table({
   const user_id = localStorage.getItem("user_id");
   console.log(user_id);
 
-  const getTasks = async () => {
+  const getTasks = useCallback(async () => {
     const data = await axios.get("/api/task/" + user_id);
     console.log(data.data);
     setTasks(data.data);
-  };
+  }, [user_id]);
 
   useEffect(() => {
     getTasks();
-  }, []);
+  }, [getTasks]);
 
   return (
     <div className="mt-8 mx-[2rem]">

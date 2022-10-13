@@ -5,10 +5,10 @@ import bell from "../assets/notification.svg";
 import line from "../assets/Line 8.svg";
 // import { useNavigate } from "react-router-dom";
 import folderIcon from "../assets/Group.svg";
-import miniFolder from "../assets/mini-folder.svg"
-import selectAll from "../assets/check-all.svg"
-import greyFolder from "../assets/grey-folder-icon.svg"
-import curvedArrow from "../assets/curved-arrow-left.svg"
+import miniFolder from "../assets/mini-folder.svg";
+import selectAll from "../assets/check-all.svg";
+import greyFolder from "../assets/grey-folder-icon.svg";
+import curvedArrow from "../assets/curved-arrow-left.svg";
 import Modal from "../components/Modal";
 // import Button from "../components/Button";
 
@@ -28,7 +28,6 @@ export default function File() {
     // { name: "designs", files: 2 },
     // { name: "naija", files: 5 },
   ];
-
 
   return (
     <div className="flex">
@@ -82,65 +81,74 @@ export default function File() {
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center border-r w-[50%] h-[100%] text-[#222F51] cursor-pointer">
               <img src={miniFolder} alt="mini folder" className="" />
-            <p className="font-semibold pl-[5.7px] text-[14px] ">
-              New folder
-            </p>
+              <p className="font-semibold pl-[5.7px] text-[14px] ">
+                New folder
+              </p>
             </div>
             <div className="flex items-center justify-center w-[50%] h-[100%] cursor-pointer">
-              <img src={selectAll} alt="select all items" className="text-[#222F51]" />
-            <p className="font-semibold pl-[5.7px] text-[14px]">
-              Select all
-            </p>
+              <img
+                src={selectAll}
+                alt="select all items"
+                className="text-[#222F51]"
+              />
+              <p className="font-semibold pl-[5.7px] text-[14px]">Select all</p>
             </div>
-
-
           </div>
         </div>
         <div className="grid " style={{ gridTemplateColumns: "3fr 1fr" }}>
           <div className="border-r-[1px]  h-screen ml-8 border-r-gray-300">
             <div className="flex flex-wrap">
-              {folders.length !== 0?
-<>
-              {folders.map((folder, i) => {
-                return (
-                  <div key={i} className="text-center m-5">
+              {folders.length !== 0 ? (
+                <>
+                  {folders.map((folder, i) => {
+                    return (
+                      <div key={i} className="text-center m-5">
+                        <img
+                          className="cursor-pointer"
+                          src={folderIcon}
+                          alt="folder"
+                        />
+                        <div>
+                          <span className="text-[#474747] font-bold text-[14px]">
+                            {folder.name}
+                          </span>{" "}
+                          <br />
+                          <span className="text-[#8C96BF] text-[12px]">
+                            {folder.files === 0
+                              ? "empty folder"
+                              : folder.files + " files"}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </>
+              ) : (
+                <div className="w-[100%] text-center mt-[70px]">
+                  <h3 className="text-4xl font-medium">No files</h3>
+                  <p className="text-base mt-[8px]">There's nothing here yet</p>
+                  <div className="flex justify-center items-end mt-[130px] text-[#8C96BF]">
                     <img
-                      className="cursor-pointer"
-                      src={folderIcon}
-                      alt="folder"
+                      src={curvedArrow}
+                      alt="curved arrow"
+                      className="mb-2 mr-1"
                     />
-                    <div>
-                      <span className="text-[#474747] font-bold text-[14px]">
-                        {folder.name}
-                      </span>{" "}
-                      <br />
-                      <span className="text-[#8C96BF] text-[12px]">
-                        {folder.files === 0
-                          ? "empty folder"
-                          : folder.files + " files"}
-                      </span>
-                    </div>
+                    <p className="text-end">
+                      Create a folder to start adding files
+                    </p>
                   </div>
-                );
-              })}
-</>
-              :
-              <div className="w-[100%] text-center mt-[70px]">
-                <h3 className="text-4xl font-medium">No files</h3>
-                <p className="text-base mt-[8px]">There's nothing here yet</p>
-                <div className="flex justify-center items-end mt-[130px] text-[#8C96BF]">
-                  <img src={curvedArrow} alt="curved arrow" className="mb-2 mr-1" />
-                  <p className="text-end">Create a folder to start adding files</p>
                 </div>
-              </div>
-              }
-
+              )}
             </div>
           </div>
           <div className="overview pt-[60px] flex justify-center">
             <div className="">
-            <img src={greyFolder} alt="folder icon"className="mx-auto mb-[8px]" />
-            <p className="text-[#C1C7CC]">Select a file to view details</p>
+              <img
+                src={greyFolder}
+                alt="folder icon"
+                className="mx-auto mb-[8px]"
+              />
+              <p className="text-[#C1C7CC]">Select a file to view details</p>
             </div>
           </div>
         </div>

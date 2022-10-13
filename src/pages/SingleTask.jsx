@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
 import Tab from "../components/Tab";
@@ -23,20 +23,20 @@ export default function SingleTask() {
   const firstname = localStorage.getItem("first_name");
   const lastname = localStorage.getItem("last_name");
 
-  const handleTask = () => {};
+  // const handleTask = () => {};
 
   const user_id = localStorage.getItem("user_id");
   console.log(user_id);
 
-  const getTaskDetails = async () => {
+  const getTaskDetails = useCallback(async () => {
     const data = await axios.get("/api/task/single/" + id?.taskId);
     console.log(data?.data);
     setTaskDetails(data?.data);
-  };
+  }, [id?.taskId]);
 
   useEffect(() => {
     getTaskDetails();
-  }, [id?.taskId]);
+  }, [getTaskDetails]);
 
   return (
     <div className="flex">

@@ -8,7 +8,7 @@ import Vect from "../assets/Vector.svg";
 import tasks from "../data/data";
 import book from "../assets/book.svg";
 import arrow from "../assets/arrowright.svg";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import CountryCodeWidget from "../components/CountryCodeWidget";
 import "../pages/styles.css";
 import RichTextEditor from "../components/RichTextEditor";
@@ -31,7 +31,7 @@ export default function Onboarding() {
     taskName: "",
   });
 
-  const { user } = useSelector((state) => state.auth);
+  // const { user } = useSelector((state) => state.auth);
   const firstname = localStorage.getItem("first_name");
   const lastname = localStorage.getItem("last_name");
 

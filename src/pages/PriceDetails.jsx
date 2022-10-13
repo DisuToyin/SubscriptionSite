@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { Navbar } from "../components/Navbar";
@@ -20,10 +20,10 @@ export default function PriceDetails() {
     _id: "633276b670bacdb7f7ee4f6f",
   });
 
-  const getPlanSummary = async () => {
+  const getPlanSummary = useCallback(async () => {
     const { data } = await axios.get(`/api/plan/${id}`);
     setPlan(data);
-  };
+  }, [id]);
 
   const createPaymentCheckOut = async () => {
     try {
@@ -42,7 +42,7 @@ export default function PriceDetails() {
 
   useEffect(() => {
     getPlanSummary();
-  }, [id, getPlanSummary]);
+  }, [getPlanSummary]);
 
   return (
     <div className="">
