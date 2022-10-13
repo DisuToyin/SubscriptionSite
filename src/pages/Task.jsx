@@ -98,9 +98,13 @@ export default function Task() {
           accept_btn={"Save"}
           decline_btn={"Cancel"}
         >
-          {features.map((task) => {
+          {features?.map((task) => {
             return (
-              <RectangularCard src={Vect} title={task.task} desc={task.desc} />
+              <RectangularCard
+                src={Vect}
+                title={task?.task}
+                desc={task?.desc}
+              />
             );
           })}
         </Modal>
