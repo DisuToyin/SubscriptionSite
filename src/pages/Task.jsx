@@ -8,11 +8,24 @@ import Button from "../components/Button";
 import listIcon from "../assets/list.svg";
 import boardview from "../assets/board.svg";
 import Table from "../components/Table";
+import Modal from "../components/Modal";
+import RectangularCard from "../components/RectangularCard";
+import Vect from "../assets/Vector.svg";
+import features from "../data/data";
 import "./styles.css";
 
 export default function Task() {
   const [open, setOpen] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [currentTab, setCurrentTab] = useState("All");
+
+  const firstname = localStorage.getItem("first_name");
+  const lastname = localStorage.getItem("last_name");
+
+  const toggleTaskCreationModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <div className="flex">
       <Sidebar open={open} setOpen={setOpen} />
@@ -29,7 +42,8 @@ export default function Task() {
             <img className="w-[24px] h-[24px]" src={bell} alt="fix" />
             <img src={line} alt="fix" />
             <div className="bg-[#E5E5E5] text-[11px] pt-[7px]  text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
-              AD
+              {firstname.charAt(0)}
+              {lastname.charAt(0)}
             </div>
           </div>
         </div>
@@ -59,6 +73,7 @@ export default function Task() {
           <div className=" flex gap-4 top-[.2rem] justify-end items-center">
             <Button
               icon={true}
+              handleClick={toggleTaskCreationModal}
               button_text={"New Task"}
               other_styles={`bg-[#E9724C] hover:bg-[black] text-white w-[auto] py-[0.5rem] text-[14px]`}
             />
@@ -73,6 +88,23 @@ export default function Task() {
 
         <Table actionsColumn={true} />
       </div>
+      {showModal && (
+        <Modal
+          single_button={true}
+          morestyles={""}
+          showModal={showModal}
+          title={`What Service Do You Want?`}
+          setShowModal={setShowModal}
+          accept_btn={"Save"}
+          decline_btn={"Cancel"}
+        >
+          {features.map((task) => {
+            return (
+              <RectangularCard src={Vect} title={task.task} desc={task.desc} />
+            );
+          })}
+        </Modal>
+      )}
     </div>
   );
 }

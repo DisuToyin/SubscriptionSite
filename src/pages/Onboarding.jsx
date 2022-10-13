@@ -15,9 +15,11 @@ import RichTextEditor from "../components/RichTextEditor";
 import FIleUpload from "../components/FIleUpload";
 import DropDown from "../components/Dropdown";
 import WhiteArrowDown from "../assets/whiteArrowUp.svg";
-import ReactCountryCode from "../components/ReactCountryCode";
+import { useNavigate } from "react-router-dom";
+// import ReactCountryCode from "../components/ReactCountryCode";
 
 export default function Onboarding() {
+  const navigate = useNavigate();
   const [formStep, setFormStep] = useState(0);
   const [showDrop, setShowDrop] = useState(false);
   const [formData, setFormData] = useState({
@@ -30,6 +32,8 @@ export default function Onboarding() {
   });
 
   const { user } = useSelector((state) => state.auth);
+  const firstname = localStorage.getItem("first_name");
+  const lastname = localStorage.getItem("last_name");
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -41,7 +45,9 @@ export default function Onboarding() {
     setFormStep((curr) => curr - 1);
   };
 
-  const handleOnboarding = (e) => {};
+  const handleOnboarding = (e) => {
+    navigate("/task");
+  };
 
   return (
     <div
@@ -53,9 +59,7 @@ export default function Onboarding() {
           <img src={onboard} alt="logo" />
         </div>
         <div className="text-[#C6C6C6] mt-[100px] ml-[20%] md:ml-[10%]">
-          <p className="text-[14px]">
-            Welcome to Carril, {user?.data?.first_name}!
-          </p>
+          <p className="text-[14px]">Welcome to Carril, {firstname}!</p>
           <h2 className="text-[24px] py-[16px] font-bold">
             Set Up Your Account
           </h2>
@@ -99,12 +103,12 @@ export default function Onboarding() {
       <div className="block bg-[#222F51]">
         {formStep < 5 ? (
           <div className="mt-[20px]  mr-[28px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
-            {user?.data?.first_name[0] + user?.data?.last_name[0]}
+            {firstname.charAt(0) + lastname.charAt(0)}
           </div>
         ) : (
           <div className="flex gap-2">
             <div className="mt-[20px]  mr-[20px] bg-[#E5E5E5] text-[11px] pt-[7px] m-[auto] text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
-              {user?.data?.first_name[0] + user?.data?.last_name[0]}
+              {firstname.charAt(0) + lastname.charAt(0)}
             </div>
             <div className="mt-[30px] cursor-pointer mr-[28px]">
               <img
