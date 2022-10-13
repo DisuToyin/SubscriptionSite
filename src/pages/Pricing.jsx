@@ -26,7 +26,7 @@ export const Pricing = () => {
       <div className=" h-[200vh]">
         <div className="mb-[3%] text-center">
           <h1 className="text-[36px] font-bold text-[#2F3941]">
-            Ready to get starterd?{" "}
+            Ready to get started?{" "}
           </h1>
           <span className="text-[#87929D]">
             Select a plan tailored to your needs
