@@ -42,8 +42,8 @@ export default function Task() {
             <img className="w-[24px] h-[24px]" src={bell} alt="fix" />
             <img src={line} alt="fix" />
             <div className="bg-[#E5E5E5] text-[11px] pt-[7px]  text-[white] text-center rounded-[50%]  h-[30px] w-[30px] ">
-              {firstname.charAt(0)}
-              {lastname.charAt(0)}
+              {firstname?.charAt(0)}
+              {lastname?.charAt(0)}
             </div>
           </div>
         </div>
