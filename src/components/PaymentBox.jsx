@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import MasterCard from "../assets/MasterCard.svg";
+import React from "react";
+import MasterCard from "../assets/Symbol.svg";
 import Dots from "../assets/Dots.svg";
-
+import Radio from "../assets/Radio Button.svg";
 export default function PaymentBox() {
-  const [check, setCheck] = useState(false);
-  const handleRadioCheck = () => {
-    setCheck(!check);
-  };
+  //   const [check, setCheck] = useState(false);
+  //   const handleRadioCheck = () => {
+  //     setCheck(!check);
+  //   };
   return (
     <div className="border-[1px]  mx-8 mt-4">
       <div className="flex w-[100%] border-b-[1px] justify-between">
@@ -28,7 +28,8 @@ export default function PaymentBox() {
           </div>
 
           <div>
-            <input
+            <img src={Radio} alt="radio" />
+            {/* <input
               onClick={handleRadioCheck}
               checked={check}
               //   id="default-radio-2"
@@ -36,7 +37,7 @@ export default function PaymentBox() {
               value=""
               //   name="default-radio"
               className="w-6 h-6 text-[#222F51] bg-[#222F51] border-[#222F51] focus:ring-[#222F51]"
-            />
+            /> */}
           </div>
         </div>
         <div className="flex"></div>
