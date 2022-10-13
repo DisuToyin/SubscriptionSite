@@ -27,6 +27,14 @@ export default function Home() {
       <a className="mb-[10%]" href="/task">
         Task
       </a>{" "}
+      <br />
+      <a className="mb-[10%]" href="/files">
+        FIles
+      </a>{" "}
+      <br />
+      <a className="mb-[10%]" href="/plans">
+        Plans
+      </a>{" "}
     </div>
   );
 }

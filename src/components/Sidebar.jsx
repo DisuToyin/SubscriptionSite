@@ -23,7 +23,7 @@ export default function Sidebar({ open, setOpen }) {
 
     {
       name: "Plans",
-      link: "/plan",
+      link: "/plans",
       icon: plans,
       margin: true,
     },

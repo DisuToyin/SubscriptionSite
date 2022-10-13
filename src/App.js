@@ -12,6 +12,7 @@ import Project from "./pages/Project";
 import SingleTask from "./pages/SingleTask";
 import File from "./pages/File";
 import PriceDetails from "./pages/PriceDetails";
+import Plans from "./pages/Plans";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="pricing/:id" element={<PriceDetails />} />
           <Route path="/onboard" element={<Onboarding />} />
           <Route path="/files" element={<File />} />
+          <Route path="/plans" element={<Plans />} />
         </Routes>
       </BrowserRouter>
     </div>
