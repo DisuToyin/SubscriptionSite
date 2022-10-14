@@ -5,29 +5,48 @@ import bell from "../assets/notification.svg";
 import line from "../assets/Line 8.svg";
 // import { useNavigate } from "react-router-dom";
 import folderIcon from "../assets/Group.svg";
+import kebabMenu from "../assets/kebab-horizontal.svg";
 import miniFolder from "../assets/mini-folder.svg";
 import selectAll from "../assets/check-all.svg";
 import greyFolder from "../assets/grey-folder-icon.svg";
 import curvedArrow from "../assets/curved-arrow-left.svg";
+import closeBtn from "../assets/close-btn.svg";
+import successIcon from "../assets/success.svg";
 import Modal from "../components/Modal";
+import DarkOverlay from "../components/DarkOverlay";
+import Input from "../components/Input";
+import Button from "../components/Button";
 // import Button from "../components/Button";
 
 export default function File() {
   const [open, setOpen] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [createFolder, setCreateFolder] = useState(false);
+  const [step, setStep] = useState(1);
+  const [folders, setFolders] = useState([]);
+  const [folderData, setFolderData] = useState({
+    folderName: ``,
+    folderFiles: {},
+  });
   // const navigate = useNavigate();
 
-  const folders = [
-    // { name: "vibes", files: 0 },
-    // { name: "designs", files: 2 },
-    // { name: "naija", files: 5 },
-    // { name: "vibes", files: 0 },
-    // { name: "designs", files: 2 },
-    // { name: "naija", files: 5 },
-    // { name: "vibes", files: 0 },
-    // { name: "designs", files: 2 },
-    // { name: "naija", files: 5 },
-  ];
+  // This is responsible for the click events on the "Create folder" and "Continue" buttons
+  const handleClick = (e) => {
+    e.preventDefault();
+    setStep(2);
+    if (step === 2) {
+      setCreateFolder(false);
+      setStep(1);
+      setFolders((oldFolders) => {
+        return [{ name: folderData.folderName, files: 0 }, ...oldFolders];
+      });
+      setFolderData({ folderName: "" });
+    }
+  };
+
+  const handleCancel = () => {
+    setCreateFolder(false);
+  };
 
   return (
     <div className="flex">
@@ -79,13 +98,22 @@ export default function File() {
             tabList={["Messages", "Description", "Files"]}
           /> */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center justify-center border-r w-[50%] h-[100%] text-[#222F51] cursor-pointer">
+            <div
+              className={`flex items-center justify-center border-r w-[50%] h-[100%] text-[#222F51] hover:bg-[#F8F9F9] ${
+                createFolder && `bg-[#F8F9F9]`
+              }`}
+            >
               <img src={miniFolder} alt="mini folder" className="" />
-              <p className="font-semibold pl-[5.7px] text-[14px] ">
+              <p
+                className="font-semibold pl-[5.7px] text-[14px] cursor-pointer"
+                onClick={() => {
+                  setCreateFolder(true);
+                }}
+              >
                 New folder
               </p>
             </div>
-            <div className="flex items-center justify-center w-[50%] h-[100%] cursor-pointer">
+            <div className="flex items-center justify-center w-[50%] h-[100%] cursor-pointer hover:bg-[#F8F9F9]">
               <img
                 src={selectAll}
                 alt="select all items"
@@ -102,7 +130,18 @@ export default function File() {
                 <>
                   {folders.map((folder, i) => {
                     return (
-                      <div key={i} className="text-center m-5">
+                      <div
+                        key={i}
+                        className="folder text-center m-5 hover:bg-[#F5F7FF] px-4"
+                      >
+                        <div className="options flex items-center justify-end ">
+                          <img
+                            src={kebabMenu}
+                            alt="options"
+                            className="cursor-pointer"
+                          />
+                        </div>
+
                         <img
                           className="cursor-pointer"
                           src={folderIcon}
@@ -163,6 +202,77 @@ export default function File() {
         >
           Test body
         </Modal>
+      )}
+
+      {/* CREATE NEW FOLDER MODAL */}
+      {createFolder && step === 1 && (
+        <DarkOverlay open={open}>
+          <div className="flex justify-between">
+            <h2 className="text-[18px] font-semibold mb-2">
+              Create new folder
+            </h2>
+            <img
+              src={closeBtn}
+              alt="close modal"
+              className="cursor-pointer"
+              onClick={() => setCreateFolder(false)}
+            />
+          </div>
+          <Input
+            label={"Folder name"}
+            value={`${folderData.folderName}`}
+            name="folderName"
+            isRequired={true}
+            inputType={"text"}
+            handleInputChange={(e) =>
+              setFolderData({ ...folderData, folderName: e.target.value })
+            }
+          />
+          <div className="btns flex justify-end">
+            <Button
+              button_type="button"
+              handleClick={handleCancel}
+              other_styles={`bg-[#fffff] text-black w-[100px] mx-3`}
+              button_text={"Cancel"}
+            ></Button>
+            <Button
+              button_type="button"
+              handleClick={handleClick}
+              other_styles={
+                folderData.folderName
+                  ? ` bg-[#E9724C] text-white w-[179px]`
+                  : `bg-[#E9724C] opacity-30 text-white w-[179px]`
+              }
+              button_text={"Create new folder"}
+              disabled={folderData.folderName ? false : true}
+            ></Button>
+          </div>
+        </DarkOverlay>
+      )}
+
+      {/* CONGRATULATIONS MODAL */}
+      {createFolder && step === 2 && (
+        <DarkOverlay open={open}>
+          <div className="flex justify-between w-[50%] float-right">
+            <img src={successIcon} alt="success" />
+            <img
+              src={closeBtn}
+              alt="close modal"
+              className="cursor-pointer"
+              onClick={() => setCreateFolder(false)}
+            />
+          </div>
+          <br /> <br />
+          <p className=" text-center mt-[24px] font-bold text-[20px]">
+            Your folder has been created successfully!
+          </p>
+          <Button
+            button_type="button"
+            handleClick={handleClick}
+            other_styles={`bg-[#E9724C] text-white `}
+            button_text={"Continue"}
+          ></Button>
+        </DarkOverlay>
       )}
     </div>
   );
