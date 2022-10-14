@@ -88,6 +88,15 @@
   width: -webkit-fill-available;
 }
 
+/* HOVER ON FOLDER TO SHOW OPTIONS ICON */
+.folder .options {
+  scale: 0;
+  transition: 0.4s ease-in-out all;
+}
+.folder:hover .options {
+  scale: 1;
+}
+
 @media screen and (max-width: 3000px) {
   .big-screen {
     max-width: fit-content;
