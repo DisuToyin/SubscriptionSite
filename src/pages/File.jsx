@@ -6,6 +6,10 @@ import bell from "../assets/notification.svg";
 import line from "../assets/Line 8.svg";
 // import { useNavigate } from "react-router-dom";
 import folderIcon from "../assets/Group.svg";
+import pdfIcon from "../assets/pdf-file.svg";
+import docIcon from "../assets/doc-file.svg";
+import svgIcon from "../assets/svg-file.svg";
+import textIcon from "../assets/txt-file.svg";
 import kebabMenu from "../assets/kebab-horizontal.svg";
 import miniFolder from "../assets/mini-folder.svg";
 import selectAll from "../assets/check-all.svg";
@@ -27,17 +31,28 @@ import Button from "../components/Button";
 
 // import Files Components from the files component folder
 import FolderDetails from "../components/Files Components/FolderDetails";
+import {
+  AddFileOne,
+  AddFileTwo,
+} from "../components/Files Components/AddFileModals";
 
 export default function File() {
   const [open, setOpen] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [createFolder, setCreateFolder] = useState(false);
+  const [addFile, setAddFile] = useState(false);
   const [step, setStep] = useState(1);
   const [folders, setFolders] = useState([]);
   const [folderData, setFolderData] = useState({
     createdAt: ``,
     folderName: ``,
     folderFiles: {},
+    type: `folder`,
+  });
+  const [fileData, setFileData] = useState({
+    createdAt: ``,
+    fileName: ``,
+    type: ``,
   });
 
   const [isFolderOptions, setIsFolderOptions] = useState(false);
@@ -56,7 +71,12 @@ export default function File() {
       setStep(1);
       setFolders((oldFolders) => {
         return [
-          { name: folderData.folderName, date: folderData.createdAt, files: 0 },
+          {
+            name: folderData.folderName,
+            date: folderData.createdAt,
+            files: 0,
+            type: folderData.type,
+          },
           ...oldFolders,
         ];
       });
@@ -69,6 +89,7 @@ export default function File() {
     setCreateFolder(false);
     setDeleteItem(false);
     setRenameItem(false);
+    setAddFile(false);
   };
 
   const deleteFolder = (id) => {
@@ -82,6 +103,7 @@ export default function File() {
   // THESE FUNCTIONS PROVIDE THE FOLDER DETAILS DISPLAYED ON THE RIGHT SIDEBAR
   const [folderName, setFolderName] = useState("");
   const [date, setDate] = useState("");
+  const [type, setType] = useState("");
 
   const getFoldername = (id) => {
     setFolderName(folders[id].name);
@@ -89,6 +111,10 @@ export default function File() {
 
   const getDate = (id) => {
     setDate(folders[id].date);
+  };
+
+  const getType = (id) => {
+    setType(folders[id].type);
   };
 
   return (
@@ -120,7 +146,7 @@ export default function File() {
           <div className='flex border-r-[1px] items-center justify-between border-r-gray-300 ml-12  py-4'>
             <b className=''>Files</b>
             <button
-              onClick={() => setShowModal(true)}
+              onClick={() => setAddFile(true)}
               className='border-2 border-black bg-white mr-3 py-[10px] px-[16px] text-[12px]'
             >
               Add Files
@@ -182,6 +208,7 @@ export default function File() {
                             setIsFolder(true);
                             getFoldername(i);
                             getDate(i);
+                            getType(i);
                           }}
                           onMouseLeave={() => setIsFolderOptions(false)}
                         >
@@ -214,7 +241,17 @@ export default function File() {
 
                           <img
                             className='cursor-pointer'
-                            src={folderIcon}
+                            src={
+                              folder.type === "pdf"
+                                ? pdfIcon
+                                : folder.type === "docx"
+                                ? docIcon
+                                : folder.type === "svg"
+                                ? svgIcon
+                                : folder.type === "txt"
+                                ? textIcon
+                                : folderIcon
+                            }
                             alt='folder'
                           />
                           <div>
@@ -225,6 +262,8 @@ export default function File() {
                             <span className='text-[#8C96BF] text-[12px]'>
                               {folder.files === 0
                                 ? "empty folder"
+                                : folder.file === undefined
+                                ? null
                                 : folder.files + " files"}
                             </span>
                           </div>
@@ -238,6 +277,7 @@ export default function File() {
                             oldName={folderName}
                             newName={folders[i]}
                             setStep={setStep}
+                            type={type}
                           />
                         )}
                         {renameItem && step === 2 && (
@@ -301,7 +341,9 @@ export default function File() {
                 <FolderDetails
                   folderName={folderName}
                   date={date}
+                  type={type}
                   setDeleteItem={setDeleteItem}
+                  setRenameItem={setRenameItem}
                 />
               ) : (
                 <>
@@ -356,6 +398,7 @@ export default function File() {
                 ...folderData,
                 createdAt: moment().format("Do MMM YYYY"),
                 folderName: e.target.value,
+                type: "folder",
               })
             }
           />
@@ -404,6 +447,24 @@ export default function File() {
             button_text={"Continue"}
           ></Button>
         </DarkOverlay>
+      )}
+
+      {addFile && step === 1 && (
+        <AddFileOne
+          handleCancel={handleCancel}
+          setAddFile={setAddFile}
+          setFileData={setFileData}
+          fileData={fileData}
+          setFolders={setFolders}
+          setStep={setStep}
+        />
+      )}
+      {addFile && step === 2 && (
+        <AddFileTwo
+          handleCancel={handleCancel}
+          setStep={setStep}
+          setAddFile={setAddFile}
+        />
       )}
     </div>
   );

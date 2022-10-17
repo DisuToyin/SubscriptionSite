@@ -11,11 +11,14 @@ export function RenameOne({
   oldName,
   newName,
   setStep,
+  type,
 }) {
   return (
     <DarkOverlay>
       <div className='flex justify-between'>
-        <h2 className='text-[18px] font-semibold mb-2'>Rename folder</h2>
+        <h2 className='text-[18px] font-semibold mb-2'>
+          Rename {type !== "folder" ? `file` : `folder`}
+        </h2>
         <img
           src={closeBtn}
           alt='close modal'
@@ -24,7 +27,7 @@ export function RenameOne({
         />
       </div>
       <Input
-        label={"Folder name"}
+        label={`${type !== "folder" ? `File` : `Folder`} name`}
         placeHolder={oldName}
         name='folderName'
         isRequired={true}
