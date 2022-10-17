@@ -16,6 +16,10 @@ import successIcon from "../assets/success.svg";
 import Modal from "../components/Modal";
 import DarkOverlay from "../components/DarkOverlay";
 import { StepOne, StepTwo } from "../components/Files Components/DeleteModals";
+import {
+  RenameOne,
+  RenameTwo,
+} from "../components/Files Components/RenameModals";
 
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -39,6 +43,7 @@ export default function File() {
   const [isFolderOptions, setIsFolderOptions] = useState(false);
   const [isFolder, setIsFolder] = useState(false);
   const [deleteItem, setDeleteItem] = useState(false);
+  const [renameItem, setRenameItem] = useState(false);
 
   // const navigate = useNavigate();
 
@@ -63,6 +68,7 @@ export default function File() {
   const handleCancel = () => {
     setCreateFolder(false);
     setDeleteItem(false);
+    setRenameItem(false);
   };
 
   const deleteFolder = (id) => {
@@ -188,7 +194,10 @@ export default function File() {
                             />
                             {isFolderOptions && (
                               <div className='folder-options w-[150px] h-[100px] text-start p-[12px] bg-[#ffffff] absolute top-[20px] left-[50px]'>
-                                <p className='text-[#474747] mb-3 cursor-pointer'>
+                                <p
+                                  className='text-[#474747] mb-3 cursor-pointer'
+                                  onClick={() => setRenameItem(true)}
+                                >
                                   Rename folder
                                 </p>
                                 <p
@@ -221,13 +230,32 @@ export default function File() {
                           </div>
                         </div>
 
+                        {renameItem && step === 1 && (
+                          <RenameOne
+                            handleCancel={handleCancel}
+                            folderData={folderData}
+                            setFolderData={setFolderData}
+                            oldName={folderName}
+                            newName={folders[i]}
+                            setStep={setStep}
+                          />
+                        )}
+                        {renameItem && step === 2 && (
+                          <RenameTwo
+                            handleCancel={handleCancel}
+                            setStep={setStep}
+                            setRename={setRenameItem}
+                            setIsFolder={setIsFolder}
+                            setFolderData={setFolderData}
+                          />
+                        )}
+
                         {deleteItem && step === 1 && (
                           <StepOne
                             handleCancel={handleCancel}
                             i={i}
                             setStep={setStep}
                             folderName={folderName}
-                            // target={target}
                           />
                         )}
                         {deleteItem && step === 2 && (
@@ -270,7 +298,11 @@ export default function File() {
           >
             <div className=''>
               {isFolder ? (
-                <FolderDetails folderName={folderName} date={date} />
+                <FolderDetails
+                  folderName={folderName}
+                  date={date}
+                  setDeleteItem={setDeleteItem}
+                />
               ) : (
                 <>
                   <img

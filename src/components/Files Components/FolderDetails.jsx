@@ -1,8 +1,7 @@
 import miniFolder from "../../assets/mini-folder.svg";
 import Button from "../Button";
 
-export default function FolderDetails({ folderName, date }) {
-  console.log(date);
+export default function FolderDetails({ folderName, date, setDeleteItem }) {
   return (
     <div className='flex-col w-[100%]'>
       <div className='flex items-center mb-[24px]'>
@@ -37,6 +36,7 @@ export default function FolderDetails({ folderName, date }) {
         button_type='button'
         other_styles={`bg-[#fffff] text-[#D93F4C] w-[100%] font-bold border border-[#D93F4C]`}
         button_text={"Delete"}
+        handleClick={() => setDeleteItem(true)}
       ></Button>
     </div>
   );
